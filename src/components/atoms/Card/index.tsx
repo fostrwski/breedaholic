@@ -26,7 +26,7 @@ const Card: React.FC<Props> = ({ title, subtitle, image, children }) => {
             height={image.height}
             className="rounded-xl w-full h-full brightness-[46%]"
           />
-          <div className="absolute bottom-4 left-4">
+          <div className="absolute bottom-0 left-0 p-4">
             <div className="font-semibold">{title}</div>
             <div className="text-gray-50">{subtitle}</div>
           </div>
