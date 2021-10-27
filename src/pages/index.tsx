@@ -1,8 +1,31 @@
-import React from "react";
-import Input from "../components/Input";
-import Layout from "../components/Layout";
+import React, { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+
+import Card from "components/atoms/Card";
+import useFetch from "hooks/useFetch";
+import { update } from "redux/breeds";
+
+import Input from "../components/atoms/Input";
+import Layout from "../components/templates/Layout";
 
 const Home = () => {
+  const { data, error, loading } = useFetch(
+    "https://api.thedogapi.com/v1/breeds"
+  );
+
+  const { breeds } = useSelector((state) => state.breeds);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(update(data));
+  }, [data]);
+
+  if (error) return `Error ${error}`;
+
+  if (loading) return "Loading...";
+
   return (
     <Layout>
       <div className="text-center p-4">
@@ -27,7 +50,11 @@ const Home = () => {
           />
         </div>
       </div>
-      <div></div>
+      <>
+        {breeds.map((breed: any) => {
+          return <Card key={breed.id} title={breed.name} />;
+        })}
+      </>
     </Layout>
   );
 };
