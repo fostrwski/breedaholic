@@ -44,7 +44,7 @@ const Home = () => {
           </h1>
           <h2 className="text-gray-600 mb-10 font-semibold">
             Breedaholic is a web application that lets you search for the dog
-            breed you're looking for!
+            breed you&apos;re looking for!
           </h2>
           <Input
             type="text"
