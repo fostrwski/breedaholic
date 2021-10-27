@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import Card from "components/atoms/Card";
+import BreedCard from "components/molecules/BreedCard";
 import useFetch from "hooks/useFetch";
 import { update } from "redux/breeds";
 
@@ -28,8 +28,8 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className="text-center p-4">
-        <div className="absolute z-[-1] opacity-20 mt-20 hidden">
+      <div className="p-4 text-center">
+        <div className="absolute z-[-1] opacity-5 mt-[-6rem] mr-[-4rem] hidden">
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <path
               fill="#047857"
@@ -39,9 +39,14 @@ const Home = () => {
           </svg>
         </div>
         <div>
-          <h1 className="text-2xl mb-6 font-semibold">
-            Search hundreds of different dog breeds!
+          <h1 className="mb-6 text-2xl font-semibold">
+            Search <span className="text-green-700">hundreds</span> of different
+            dog breeds!
           </h1>
+          <h2 className="text-gray-600 mb-10 font-semibold">
+            Breedaholic is a web application that lets you search for the dog
+            breed you're looking for!
+          </h2>
           <Input
             type="text"
             id="search"
@@ -52,7 +57,7 @@ const Home = () => {
       </div>
       <>
         {breeds.map((breed: any) => {
-          return <Card key={breed.id} title={breed.name} />;
+          return <BreedCard key={breed.id} breed={breed} />;
         })}
       </>
     </Layout>
