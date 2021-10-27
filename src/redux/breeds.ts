@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface BreedsState {
-  value: any[];
+  breeds: any[];
 }
 
 const initialState: BreedsState = {
-  value: [],
+  breeds: [],
 };
 
 export const breedsSlice = createSlice({

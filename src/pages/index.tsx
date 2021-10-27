@@ -2,21 +2,20 @@ import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import Input from "components/atoms/Input";
 import BreedCard from "components/molecules/BreedCard";
+import Layout from "components/templates/Layout";
 import useFetch from "hooks/useFetch";
 import { update } from "redux/breeds";
-
-import Input from "../components/atoms/Input";
-import Layout from "../components/templates/Layout";
+import type { AppDispatch, RootState } from "redux/store";
 
 const Home = () => {
   const { data, error, loading } = useFetch(
     "https://api.thedogapi.com/v1/breeds"
   );
 
-  const { breeds } = useSelector((state) => state.breeds);
-
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
+  const { breeds } = useSelector((state: RootState) => state.breeds);
 
   useEffect(() => {
     dispatch(update(data));

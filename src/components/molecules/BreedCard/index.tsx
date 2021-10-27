@@ -1,8 +1,13 @@
 import React from "react";
 
 import Card from "components/atoms/Card";
+import { Breed } from "types";
 
-const BreedCard = ({ breed }) => {
+interface Props {
+  breed: Breed;
+}
+
+const BreedCard: React.FC<Props> = ({ breed }) => {
   return (
     <Card
       title={breed.name}
