@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-const useFetch = (service) => {
+const useFetch = (service: string) => {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
