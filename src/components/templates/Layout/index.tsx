@@ -11,7 +11,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <NavBar />
-      <main className="px-6 mt-2">{children}</main>
+      <main className="px-4 mt-2">{children}</main>
       <Footer />
     </>
   );
