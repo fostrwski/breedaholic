@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
+    "@tailwindcss/forms": "^0.3.4",
     "next": "latest",
     "next-redux-wrapper": "^7.0.5",
     "react": "^17.0.2",
