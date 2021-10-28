@@ -11,12 +11,19 @@ interface Props {
     width: number;
     height: number;
   };
+  className?: string;
   children: React.ReactNode;
 }
 
-const Card: React.FC<Props> = ({ title, subtitle, image, children }) => {
+const Card: React.FC<Props> = ({
+  title,
+  subtitle,
+  image,
+  className,
+  children,
+}) => {
   return (
-    <div className="p-2 text-white">
+    <div className={`${className} p-2 text-white`}>
       {image && (
         <div className="relative rounded-xl" style={{ minHeight: 200 }}>
           <Image
