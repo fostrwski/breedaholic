@@ -16,7 +16,7 @@ interface Props {
 
 const Card: React.FC<Props> = ({ title, subtitle, image, children }) => {
   return (
-    <div className="p-4 text-white">
+    <div className="p-2 text-white">
       {image && (
         <div className="relative rounded-xl" style={{ minHeight: 200 }}>
           <Image
@@ -33,7 +33,7 @@ const Card: React.FC<Props> = ({ title, subtitle, image, children }) => {
         </div>
       )}
       {/* Content */}
-      <div className="text-black"></div>
+      {!image && <div className="text-black">{children}</div>}
     </div>
   );
 };
