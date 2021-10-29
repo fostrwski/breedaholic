@@ -26,7 +26,7 @@ const Breeds = () => {
   return (
     <>
       {breeds.map((breed: any) => {
-        return <BreedCard key={breed.id} breed={breed} />;
+        return <BreedCard key={breed.id} breed={breed} className="mb-4" />;
       })}
     </>
   );

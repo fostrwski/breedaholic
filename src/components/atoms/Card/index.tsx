@@ -23,15 +23,16 @@ const Card: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <div className={`${className} p-2 text-white`}>
+    <div className={`${className} text-white w-full`}>
       {image && (
-        <div className="relative rounded-xl" style={{ minHeight: 200 }}>
+        <div className="relative rounded-xl">
           <Image
             src={image.src}
             alt={image.alt}
             width={image.width}
             height={image.height}
-            className="rounded-xl w-full h-full brightness-[46%]"
+            layout="responsive"
+            className="rounded-xl brightness-[46%]"
           />
           <div className="absolute bottom-0 left-0 p-4">
             <div className="font-semibold">{title}</div>

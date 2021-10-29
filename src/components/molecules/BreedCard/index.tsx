@@ -7,7 +7,10 @@ interface Props {
   breed: Breed;
 }
 
-const BreedCard: React.FC<Props> = ({ breed }) => {
+const BreedCard: React.FC<Props & Record<string, any>> = ({
+  breed,
+  ...props
+}) => {
   return (
     <Card
       title={breed.name}
@@ -18,6 +21,7 @@ const BreedCard: React.FC<Props> = ({ breed }) => {
         width: breed.image.width,
         height: breed.image.height,
       }}
+      {...props}
     >
       <ul>
         <li>{breed.life_span}</li>
