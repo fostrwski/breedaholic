@@ -10,7 +10,7 @@ const Home = () => {
       <div className="p-4">
         <Heading />
 
-        <div className="mt-6">
+        <div className="mt-8">
           <Breeds />
         </div>
       </div>
