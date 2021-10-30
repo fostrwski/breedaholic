@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-
-import { useDispatch, useSelector } from "react-redux";
-
 import BreedCard from "components/molecules/BreedCard";
 import useFetch from "hooks/useFetch";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { update } from "redux/breeds";
 import type { AppDispatch, RootState } from "redux/store";
 

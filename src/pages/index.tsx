@@ -1,8 +1,7 @@
-import React from "react";
-
 import Layout from "components/templates/Layout";
 import Breeds from "modules/IndexPage/Breeds";
 import Heading from "modules/IndexPage/Heading";
+import React from "react";
 
 const Home = () => {
   return (
