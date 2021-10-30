@@ -3,18 +3,17 @@ interface Breed {
   name: string;
   temperament: string;
   life_span: string;
-  alt_names: string;
-  wikipedia_url: string;
-  origin: string;
+  origin?: string;
   weight: object;
-  country_code: string;
   height: object;
-  image: {
+  image?: {
+    id: string;
     url: string;
     height: number;
     width: number;
   };
   bred_for: string;
+  breed_group: string;
 }
 
 type Breeds = Array<Breed>;
