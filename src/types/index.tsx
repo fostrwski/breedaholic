@@ -4,8 +4,14 @@ interface Breed {
   temperament: string;
   life_span: string;
   origin?: string;
-  weight: object;
-  height: object;
+  weight: {
+    imperial: string;
+    metrical: string;
+  };
+  height: {
+    imperial: string;
+    metrical: string;
+  };
   image?: {
     id: string;
     url: string;
