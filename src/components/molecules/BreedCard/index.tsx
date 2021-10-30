@@ -15,10 +15,10 @@ const BreedCard: React.FC<Props & Record<string, any>> = ({
       title={breed.name}
       subtitle={breed.temperament}
       image={{
-        src: breed.image.url,
+        src: breed.image!.url,
         alt: `${breed.name} image`,
-        width: breed.image.width,
-        height: breed.image.height,
+        width: breed.image!.width,
+        height: breed.image!.height,
       }}
       {...props}
     >
