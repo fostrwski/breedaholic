@@ -32,7 +32,7 @@ const Breeds = () => {
   return (
     <>
       {breeds.map((breed) => (
-        <BreedCard key={breed.id} breed={breed.id} />
+        <BreedCard key={breed.id} breed={breed} className="mb-2" />
       ))}
     </>
   );
