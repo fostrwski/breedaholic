@@ -19,13 +19,21 @@ const Breeds = () => {
 
   if (error) return <h1>Error: {error}</h1>;
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading)
+    return (
+      <div
+        className="mt-14 animate-spin text-center w-full"
+        style={{ fontSize: 46 }}
+      >
+        🐶
+      </div>
+    );
 
   return (
     <>
-      {breeds.map((breed: any) => {
-        return <BreedCard key={breed.id} breed={breed} className="mb-4" />;
-      })}
+      {breeds.map((breed) => (
+        <BreedCard key={breed.id} breed={breed.id} />
+      ))}
     </>
   );
 };
