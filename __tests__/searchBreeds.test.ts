@@ -55,7 +55,7 @@ const breeds: Breeds = [
   },
 ];
 
-describe("searchBreeds test", () => {
+describe("Breeds filtering functions' tests", () => {
   it("checks if searchByName returns what's expected", () => {
     expect(searchByName(breeds, "golden retriever")).toStrictEqual([]);
     expect(searchByName(breeds, "border")).toStrictEqual([breeds[0]]);
