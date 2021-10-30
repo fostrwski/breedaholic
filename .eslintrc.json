@@ -1,14 +1,20 @@
 {
   "root": true,
+  "env": { "jest": true },
   "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["simple-import-sort", "@typescript-eslint"],
+  "plugins": ["simple-import-sort", "@typescript-eslint", "jest"],
   "rules": {
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }
