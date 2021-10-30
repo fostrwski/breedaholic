@@ -10,8 +10,8 @@ const useFetch = (service: string) => {
       const res = await fetch(service);
       const json = await res.json();
       setData(json);
-    } catch (err: any) {
-      setError(err);
+    } catch (error: any) {
+      setError(error);
     }
     setLoading(false);
   }, [service]);
