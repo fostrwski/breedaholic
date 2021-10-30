@@ -1,10 +1,8 @@
-import React from "react";
-
-import { useDispatch, useSelector } from "react-redux";
-
 import Input from "components/atoms/Form/Input";
 import Select from "components/atoms/Form/Select";
 import Option from "components/atoms/Form/Select/Option";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { update } from "redux/search";
 import type { AppDispatch, RootState } from "redux/store";
 
@@ -19,7 +17,7 @@ const Heading = () => {
   };
 
   return (
-    <div className="text-center">
+    <section className="text-center">
       <div className={`${searchedTerm !== "" ? "invisible absolute" : ""}`}>
         <h1 className="mb-4 text-2xl font-semibold">
           Search <span className="text-green-700">hundreds</span> of different
@@ -42,7 +40,7 @@ const Heading = () => {
         <Option>Name 🐾</Option>
         <Option>Temperament 🍃</Option>
       </Select>
-    </div>
+    </section>
   );
 };
 
