@@ -1,11 +1,11 @@
-import Layout from "components/templates/Layout";
-import Breeds from "modules/IndexPage/Breeds";
-import Heading from "modules/IndexPage/Heading";
+import DefaultLayout from "components/common/layouts/Default";
+import Breeds from "components/Index/Breeds";
+import Heading from "components/Index/Heading";
 import React from "react";
 
-const Home = () => {
+const Index: React.FC = () => {
   return (
-    <Layout>
+    <DefaultLayout>
       <div className="p-4">
         <Heading />
 
@@ -13,8 +13,8 @@ const Home = () => {
           <Breeds />
         </div>
       </div>
-    </Layout>
+    </DefaultLayout>
   );
 };
 
-export default Home;
+export default Index;
