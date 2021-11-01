@@ -10,6 +10,10 @@ const Heading: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { searchedTerm } = useSelector((state: RootState) => state.search);
 
+  const handleSubmit = (event: React.FormEvent): void => {
+    event.preventDefault();
+  };
+
   const handleInputChange = (
     event: React.FormEvent<HTMLInputElement>
   ): void => {
@@ -19,17 +23,17 @@ const Heading: React.FC = () => {
   return (
     <section className="text-center">
       <div className={`${searchedTerm !== "" ? "invisible absolute" : ""}`}>
-        <h1 className="mb-4 text-2xl font-semibold">
-          Search <span className="text-green-700">hundreds</span> of different
+        <h1 className="mb-4 text-xl font-semibold">
+          Search <span className="text-green-600">hundreds</span> of different
           dog breeds!
         </h1>
-        <h2 className="text-gray-600 mb-6 sm:mb-8">
+        <h2 className="text-gray-600 mb-6 sm:mb-8 text-sm">
           Breedaholic is a web application that lets you search for the dog
           breed you&apos;re looking for!
         </h2>
       </div>
       {/* Search breeds */}
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Input
           type="search"
           id="search"
