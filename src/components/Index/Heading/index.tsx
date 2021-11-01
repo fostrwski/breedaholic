@@ -21,14 +21,14 @@ const Heading: React.FC = () => {
           Search <span className="text-green-700">hundreds</span> of different
           dog breeds!
         </h1>
-        <h2 className="text-gray-600 mb-6 sm:mb-8 font-semibold">
+        <h2 className="text-gray-600 mb-6 sm:mb-8">
           Breedaholic is a web application that lets you search for the dog
           breed you&apos;re looking for!
         </h2>
       </div>
       {/* Search breeds */}
       <Input
-        type="text"
+        type="search"
         id="search"
         name="search"
         placeholder="Search for breed..."
