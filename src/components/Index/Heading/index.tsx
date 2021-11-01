@@ -35,8 +35,8 @@ const Heading: React.FC = () => {
           id="search"
           name="search"
           placeholder="Search for breed..."
-          onChange={handleInputChange}
           icon={<SearchIcon />}
+          onChange={handleInputChange}
         />
       </Form>
     </section>
