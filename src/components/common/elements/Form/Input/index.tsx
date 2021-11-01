@@ -9,7 +9,7 @@ const Input: React.FC<Props & Record<string, any>> = ({ icon, ...props }) => {
     <div className="relative text-gray-600">
       <input
         {...props}
-        className={`form-input w-full border-0 shadow-2xl p-4 rounded-xl focus:ring-2 focus:ring-green-700 focus:ring-opacity-40 ${
+        className={`form-input w-full border-0 shadow-2xl p-4 rounded-xl focus:ring-2 focus:ring-green-600 focus:ring-opacity-80 ${
           icon ? "pl-12" : ""
         }`}
       />

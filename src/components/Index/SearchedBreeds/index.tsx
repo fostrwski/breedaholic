@@ -29,7 +29,7 @@ const SearchedBreeds: React.FC<Props> = ({
 
   return (
     <>
-      <div className="mb-4 text-gray-600 flex items-center">
+      <div className="mb-4 text-gray-600 flex items-center text-xs">
         Search results for &quot;
         {searchedTerm}&quot;
       </div>
