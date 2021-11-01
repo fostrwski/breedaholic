@@ -1,3 +1,5 @@
+import { SearchIcon } from "@heroicons/react/solid";
+import Form from "components/common/elements/Form";
 import Input from "components/common/elements/Form/Input";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,13 +29,16 @@ const Heading: React.FC = () => {
         </h2>
       </div>
       {/* Search breeds */}
-      <Input
-        type="search"
-        id="search"
-        name="search"
-        placeholder="Search for breed..."
-        onChange={handleInputChange}
-      />
+      <Form>
+        <Input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Search for breed..."
+          onChange={handleInputChange}
+          icon={<SearchIcon />}
+        />
+      </Form>
     </section>
   );
 };

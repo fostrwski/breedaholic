@@ -31,11 +31,11 @@ const SearchedBreeds: React.FC<Props> = ({
   return (
     <>
       <div className="mb-4 text-gray-600 flex items-center">
-        <SearchIcon className="h-5 w-5 mr-2" /> Wyniki wyszukiwania dla &quot;
+        Wyniki wyszukiwania dla &quot;
         {searchedTerm}&quot;
       </div>
       {switchSearchBy(breeds, searchBy, searchedTerm)!.map((breed: Breed) => (
-        <BreedCard key={breed.id} breed={breed} className="mb-4" />
+        <BreedCard key={breed.id} breed={breed} />
       ))}
     </>
   );

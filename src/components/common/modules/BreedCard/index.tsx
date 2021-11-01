@@ -20,6 +20,7 @@ const BreedCard: React.FC<Props & Record<string, any>> = ({
         width: breed.image!.width,
         height: breed.image!.height,
       }}
+      className="mb-4 hover:brightness-[84%] active:brightness-[84%]"
       {...props}
     >
       <ul>

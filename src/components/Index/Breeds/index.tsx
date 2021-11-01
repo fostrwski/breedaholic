@@ -34,9 +34,7 @@ const Breeds: React.FC = () => {
   return (
     <>
       {searchedTerm === "" &&
-        breeds.map((breed) => (
-          <BreedCard key={breed.id} breed={breed} className="mb-4" />
-        ))}
+        breeds.map((breed) => <BreedCard key={breed.id} breed={breed} />)}
       {searchedTerm !== "" && (
         <SearchedBreeds
           breeds={breeds}
