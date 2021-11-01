@@ -1,4 +1,3 @@
-import { SearchIcon } from "@heroicons/react/solid";
 import BreedCard from "components/common/modules/BreedCard";
 import React from "react";
 import { Breed, Breeds } from "types";
@@ -31,7 +30,7 @@ const SearchedBreeds: React.FC<Props> = ({
   return (
     <>
       <div className="mb-4 text-gray-600 flex items-center">
-        Wyniki wyszukiwania dla &quot;
+        Search results for &quot;
         {searchedTerm}&quot;
       </div>
       {switchSearchBy(breeds, searchBy, searchedTerm)!.map((breed: Breed) => (
