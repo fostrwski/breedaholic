@@ -1,5 +1,5 @@
 
-## 🐶 This application will let you find the dog breed you are looking for
+## 🐶 This application will let you find the dog breed you're looking for!
 
 ### 🔨 Created using
 
