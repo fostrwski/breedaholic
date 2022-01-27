@@ -1,13 +1,11 @@
 {
   "root": true,
   "env": { "jest": true },
-  "parser": "@typescript-eslint/parser",
   "extends": [
-    "eslint:recommended",
     "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended"
+    "prettier"
   ],
-  "plugins": ["simple-import-sort", "@typescript-eslint", "jest"],
+  "plugins": ["simple-import-sort", "jest"],
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
