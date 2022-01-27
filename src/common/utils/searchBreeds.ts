@@ -1,13 +1,16 @@
-import { Breed, Breeds } from "common/types";
+import { BreedsType, BreedType } from "common/types";
 
-const searchByName = (breeds: Breeds, searchedTerm: string): Breeds => {
-  return breeds.filter((breed: Breed) =>
+const searchByName = (breeds: BreedsType, searchedTerm: string): BreedsType => {
+  return breeds.filter((breed: BreedType) =>
     breed.name.toLowerCase().includes(searchedTerm.toLowerCase())
   );
 };
 
-const searchByTemperament = (breeds: Breeds, searchedTerm: string): Breeds => {
-  return breeds.filter((breed: Breed) =>
+const searchByTemperament = (
+  breeds: BreedsType,
+  searchedTerm: string
+): BreedsType => {
+  return breeds.filter((breed: BreedType) =>
     breed.temperament.toLowerCase().includes(searchedTerm.toLowerCase())
   );
 };

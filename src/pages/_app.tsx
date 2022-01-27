@@ -10,11 +10,9 @@ interface MyAppProps extends AppProps {
   fetchedBreeds: BreedsType;
 }
 
-const MyApp: React.FC<MyAppProps> = ({
-  Component,
-  pageProps,
-  fetchedBreeds,
-}) => {
+const MyApp: React.FC<MyAppProps> & {
+  getInitialProps: () => object;
+} = ({ Component, pageProps, fetchedBreeds }) => {
   const [breeds] = useState<BreedsType>(fetchedBreeds);
   const [searchedBreeds, setSearchedBreeds] = useState<BreedsType>(breeds);
 

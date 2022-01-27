@@ -5,15 +5,15 @@ import React, { useContext } from "react";
 const Heading: React.FC = () => {
   const { setSearchedTerm } = useContext(SearchContext);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchedTerm(e.target.value);
   };
 
   return (
     <div className="text-center">
       <h1 className="text-xl font-semibold mb-6">
-        Search <span className="text-green-700">hundreds</span> of different dog
-        breeds!
+        Search through<span className="text-green-700">hundreds</span> of
+        different dog breeds!
       </h1>
 
       <Input
