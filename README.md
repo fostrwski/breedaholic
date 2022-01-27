@@ -1,5 +1,5 @@
 
-## 🐶 This application will let you find a perfect dog breed for you based on the properties you provide
+## 🐶 This application will let you find the dog breed you are looking for
 
 ### 🔨 Created using
 
