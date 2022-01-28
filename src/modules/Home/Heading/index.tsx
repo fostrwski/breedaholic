@@ -12,14 +12,14 @@ const Heading: React.FC = () => {
   return (
     <div className="text-center">
       <h1 className="text-xl font-semibold mb-6">
-        Search through<span className="text-green-700">hundreds</span> of
+        Search through <span className="text-green-700">hundreds</span> of
         different dog breeds!
       </h1>
 
       <Input
         id="search"
         type="text"
-        placeholder="Szukaj rasy"
+        placeholder="Search breed"
         customClasses="text-lg placeholder:text-lg"
         onChange={handleChange}
       />
