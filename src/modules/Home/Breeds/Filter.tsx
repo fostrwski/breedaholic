@@ -87,7 +87,7 @@ const Filter: React.FC = () => {
         </Container>
       </Dialog>
       <Button
-        customClasses="fixed bottom-4 flex justify-center items-center py-3 gap-2 text-xl w-1/2 inset-x-0 mx-auto"
+        customClasses="fixed bottom-4 flex justify-center items-center py-2 gap-2 text-xl w-1/2 inset-x-0 mx-auto"
         onClick={handleOpen}
       >
         <AdjustmentsIcon className="w-6 h-6" />
