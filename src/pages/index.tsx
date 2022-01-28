@@ -9,7 +9,7 @@ const Index: React.FC = () => {
       <section>
         <Heading />
       </section>
-      <section className="mt-10">
+      <section className="mt-8">
         <Breeds />
       </section>
     </DefaultLayout>
