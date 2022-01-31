@@ -18,7 +18,7 @@ const Heading: React.FC = () => {
 
       <Input
         id="search"
-        type="text"
+        type="search"
         placeholder="Search breed"
         customClasses="text-lg placeholder:text-lg"
         onChange={handleChange}

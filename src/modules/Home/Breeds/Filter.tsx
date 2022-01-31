@@ -1,10 +1,9 @@
 import { Dialog, Disclosure } from "@headlessui/react";
-import { AdjustmentsIcon, XIcon } from "@heroicons/react/outline";
+import { AdjustmentsIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
 import Button from "common/components/Button";
 import Container from "common/components/Container";
 import React, { useState } from "react";
-
 const filters = [
   {
     title: "Category",
@@ -47,7 +46,7 @@ const Filter: React.FC = () => {
         onClose={handleClose}
         className="fixed z-10 inset-0 overflow-y-auto"
       >
-        <Container customClasses="bg-gray-100 py-6 rounded-b-2xl">
+        <Container customClasses="bg-white shadow-2xl pt-6 pb-8 rounded-b-2xl">
           <Dialog.Title className="mb-8 font-bold text-2xl">
             Filter breeds
           </Dialog.Title>
@@ -57,15 +56,17 @@ const Filter: React.FC = () => {
                 <Disclosure>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="p-2 rounded-xl w-full flex items-center justify-between">
-                        <span className="font-semibold">{filter.title}</span>
+                      <Disclosure.Button className="py-2 rounded-xl w-full flex items-center justify-between focus-visible:text-green-700">
+                        <span className="font-semibold text-xl">
+                          {filter.title}
+                        </span>
                         {open ? (
                           <ChevronUpIcon className="w-5 h-5" />
                         ) : (
                           <ChevronDownIcon className="w-5 h-5" />
                         )}
                       </Disclosure.Button>
-                      <Disclosure.Panel className="mt-4 px-2">
+                      <Disclosure.Panel className="mt-4">
                         {filter.component}
                       </Disclosure.Panel>
                     </>
@@ -78,17 +79,18 @@ const Filter: React.FC = () => {
             ))}
           </>
           <Button
-            customClasses="fixed bottom-4 flex justify-center items-center py-3 gap-2 text-xl w-1/2 inset-x-0 mx-auto"
+            customClasses="fixed bottom-4 py-4 text-lg w-1/2 inset-x-0 mx-auto"
+            aria-label="Close filter breeds"
             onClick={handleClose}
           >
-            <XIcon className="w-6 h-6" />
-            <span>Close</span>
+            Close
           </Button>
         </Container>
       </Dialog>
       <Button
-        customClasses="fixed bottom-4 flex justify-center items-center py-2 gap-2 text-xl w-1/2 inset-x-0 mx-auto"
+        customClasses="fixed bottom-4 flex justify-center items-center py-4 gap-2 text-lg w-1/2 inset-x-0 mx-auto"
         onClick={handleOpen}
+        aria-label="Filter breeds"
       >
         <AdjustmentsIcon className="w-6 h-6" />
         <span>Filter</span>
