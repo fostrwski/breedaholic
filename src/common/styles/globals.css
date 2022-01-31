@@ -19,7 +19,7 @@
   textarea,
   select,
   button {
-    @apply border-none focus:ring-2 focus:ring-green-700 focus:outline-none;
+    @apply border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:filter;
   }
 
   [type="text"],
@@ -37,6 +37,27 @@
   [multiple],
   textarea,
   select {
-    @apply w-full bg-gray-100 px-6 py-3 rounded-full outline-none focus:bg-white;
+    @apply focus-visible:brightness-95;
+  }
+
+  button {
+    @apply focus-visible:brightness-90;
+  }
+
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea {
+    @apply w-full bg-gray-100 px-6 py-2 rounded-full;
   }
 }
