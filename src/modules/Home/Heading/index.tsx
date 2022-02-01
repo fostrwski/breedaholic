@@ -1,12 +1,11 @@
 import Input from "common/components/Input";
-import { SearchContext } from "common/context/Search";
-import React, { useContext } from "react";
+import { useFilterBreeds } from "common/context/FilterBreeds";
+import React from "react";
 
 const Heading: React.FC = () => {
-  const { setSearchedTerm } = useContext(SearchContext);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchedTerm(e.target.value);
+  const { filterByName } = useFilterBreeds();
+  const handleChange = (e) => {
+    filterByName(e.target.value);
   };
 
   return (

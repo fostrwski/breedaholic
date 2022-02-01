@@ -1,25 +1,18 @@
-import { BreedsContext } from "common/context/Breeds";
-import { SearchContext } from "common/context/Search";
-import { searchBreedsByName } from "common/utils/searchBreeds";
-import React, { useContext, useEffect } from "react";
+import { useFilterBreeds } from "common/context/FilterBreeds";
+import { BreedType } from "common/types";
+import React from "react";
 
 import Card from "./Card";
 
 const Preview: React.FC = () => {
-  const { breeds, searchedBreeds, setSearchedBreeds } = useContext(
-    BreedsContext
-  );
-  const { searchedTerm } = useContext(SearchContext);
-
-  useEffect(() => {
-    setSearchedBreeds(searchBreedsByName(breeds, searchedTerm));
-  }, [searchedTerm]);
+  const { filteredBreeds } = useFilterBreeds();
 
   return (
     <div className="grid gap-6">
-      {searchedBreeds.map((breed) => (
+      {filteredBreeds.map((breed: BreedType) => (
         <Card key={breed.id} breed={breed} />
       ))}
+      {filteredBreeds.length === 0 && <div>We couldn't find any breeds :(</div>}
     </div>
   );
 };
