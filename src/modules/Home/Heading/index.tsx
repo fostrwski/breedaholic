@@ -4,7 +4,7 @@ import React from "react";
 
 const Heading: React.FC = () => {
   const { filterByName } = useFilterBreeds();
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     filterByName(e.target.value);
   };
 
