@@ -19,7 +19,7 @@
   textarea,
   select,
   button {
-    @apply border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:filter;
+    @apply border-none focus:outline-none focus:ring-0 focus-visible:filter;
   }
 
   [type="text"],
