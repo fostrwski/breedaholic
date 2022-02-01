@@ -1,7 +1,7 @@
 import "common/styles/globals.css";
 
 import { BreedsContext } from "common/context/Breeds";
-import SearchProvider from "common/context/Search";
+import { FilterBreedsProvider } from "common/context/FilterBreeds";
 import { BreedsType } from "common/types";
 import type { AppProps } from "next/app";
 import React, { useState } from "react";
@@ -14,19 +14,16 @@ const MyApp: React.FC<MyAppProps> & {
   getInitialProps: () => object;
 } = ({ Component, pageProps, fetchedBreeds }) => {
   const [breeds] = useState<BreedsType>(fetchedBreeds);
-  const [searchedBreeds, setSearchedBreeds] = useState<BreedsType>(breeds);
 
-  const value = {
+  const breedsContextValue = {
     breeds,
-    searchedBreeds,
-    setSearchedBreeds,
   };
 
   return (
-    <BreedsContext.Provider value={value}>
-      <SearchProvider>
+    <BreedsContext.Provider value={breedsContextValue}>
+      <FilterBreedsProvider>
         <Component {...pageProps} />
-      </SearchProvider>
+      </FilterBreedsProvider>
     </BreedsContext.Provider>
   );
 };
