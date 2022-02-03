@@ -1,9 +1,11 @@
-import Input from "common/components/Input";
-import { useFilterBreeds } from "common/context/FilterBreeds";
 import React from "react";
+
+import Input from "@/common/components/Input";
+import { useFilterBreeds } from "@/common/context/FilterBreeds";
 
 const Heading: React.FC = () => {
   const { filterByName } = useFilterBreeds();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     filterByName(e.target.value);
   };
@@ -16,9 +18,9 @@ const Heading: React.FC = () => {
       </h1>
 
       <Input
-        id="search"
+        id="search-breed"
         type="search"
-        placeholder="Search breed"
+        placeholder="Search by name..."
         customClasses="text-lg placeholder:text-lg"
         onChange={handleChange}
       />
