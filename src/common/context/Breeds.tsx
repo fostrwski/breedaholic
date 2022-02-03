@@ -1,5 +1,6 @@
-import { BreedsType } from "common/types";
 import { createContext } from "react";
+
+import { BreedsType } from "@/common/types";
 
 interface BreedsContextType {
   breeds: any[] | BreedsType;

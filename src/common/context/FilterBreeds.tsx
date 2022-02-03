@@ -1,5 +1,6 @@
-import { BreedsType, BreedType } from "common/types";
 import { createContext, useContext, useEffect, useState } from "react";
+
+import { BreedsType, BreedType } from "@/common/types";
 
 import { BreedsContext } from "./Breeds";
 
@@ -43,7 +44,7 @@ const FilterBreedsProvider: React.FC<FilterBreedsProviderProps> = ({
       );
     });
     setFilteredBreeds(b);
-  }, [name, category]);
+  }, [name, category, breeds]);
 
   useEffect(() => {}, [category]);
 
