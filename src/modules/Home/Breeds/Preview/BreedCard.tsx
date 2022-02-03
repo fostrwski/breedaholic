@@ -7,9 +7,9 @@ interface CardProps {
   breed: BreedType;
 }
 
-const Card: React.FC<CardProps> = ({ breed }) => {
+const BreedCard: React.FC<CardProps> = ({ breed, ...props }) => {
   return (
-    <div className="relative">
+    <div className="relative" {...props}>
       <Image
         src={breed.image!.url}
         alt={breed.name}
@@ -26,4 +26,4 @@ const Card: React.FC<CardProps> = ({ breed }) => {
   );
 };
 
-export default Card;
+export default BreedCard;
