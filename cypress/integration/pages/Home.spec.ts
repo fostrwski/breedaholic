@@ -6,11 +6,12 @@ describe("Home page", () => {
 
   it("Should search for Border Collie and show a single result", () => {
     cy.get("#search-breed").type("Border Collie");
-    cy.get("[data-cy=border-collie-preview-card]").contains("Border Collie");
+    cy.get("[data-cy=border-collie-preview-card]").should("be.visible");
+    cy.get("[data-cy=affenpinscher]").should("not.exist");
   });
 
   it("Should search for 'xxx' and show an error message because it's not a valid dog breed", () => {
     cy.get("#search-breed").type("xxx");
-    cy.get("[data-cy=breeds-not-found-message]").should("be.visible");
+    cy.get("[data-cy=breeds-not-found-message]").should("exist");
   });
 });
