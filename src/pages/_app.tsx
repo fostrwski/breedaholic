@@ -1,10 +1,12 @@
-import "common/styles/globals.css";
+import "@/common/styles/globals.css";
 
-import { BreedsContext } from "common/context/Breeds";
-import { FilterBreedsProvider } from "common/context/FilterBreeds";
-import { BreedsType } from "common/types";
 import type { AppProps } from "next/app";
 import React, { useState } from "react";
+
+import { BreedsContext } from "@/common/context/Breeds";
+import { FilterBreedsProvider } from "@/common/context/FilterBreeds";
+import { BreedsType } from "@/common/types";
+import { GET_BREEDS_URL } from "@/common/utils/api";
 
 interface MyAppProps extends AppProps {
   fetchedBreeds: BreedsType;
@@ -29,7 +31,7 @@ const MyApp: React.FC<MyAppProps> & {
 };
 
 MyApp.getInitialProps = async () => {
-  const res = await fetch("https://api.thedogapi.com/v1/breeds");
+  const res = await fetch(GET_BREEDS_URL);
   const breeds = await res.json();
   return { fetchedBreeds: breeds };
 };
