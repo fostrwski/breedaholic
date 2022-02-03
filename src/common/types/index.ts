@@ -1,4 +1,4 @@
-interface Breed {
+interface BreedType {
   id: number;
   name: string;
   temperament: string;
@@ -22,6 +22,6 @@ interface Breed {
   breed_group: string;
 }
 
-type Breeds = Array<Breed>;
+type BreedsType = Array<Breed>;
 
-export type { Breeds as BreedsType, Breed as BreedType };
+export type { BreedsType, BreedType };
