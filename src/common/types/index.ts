@@ -22,6 +22,6 @@ interface BreedType {
   breed_group: string;
 }
 
-type BreedsType = Array<Breed>;
+type BreedsType = Array<BreedType>;
 
 export type { BreedsType, BreedType };
