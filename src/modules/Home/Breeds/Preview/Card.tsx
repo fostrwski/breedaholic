@@ -1,6 +1,7 @@
-import { BreedType } from "common/types";
 import Image from "next/image";
 import React from "react";
+
+import { BreedType } from "@/common/types";
 
 interface CardProps {
   breed: BreedType;
