@@ -5,15 +5,21 @@ import { BreedsType, BreedType } from "@/common/types";
 import { BreedsContext } from "./Breeds";
 
 interface FilterBreedsContextType {
-  filteredBreeds: any[] | BreedsType;
+  filteredBreeds: BreedsType;
   filterByName: (name: string) => void;
-  filterByCategory: (category: string) => void;
+  currentCategories: Array<string>;
+  filterByCategories: (categories: Array<string>) => void;
+  addCategory: (category: string) => void;
+  removeCategory: (category: string) => void;
 }
 
 const filterBreedsContextDefaultValues: FilterBreedsContextType = {
   filteredBreeds: [],
   filterByName: () => {},
-  filterByCategory: () => {},
+  currentCategories: [],
+  filterByCategories: () => {},
+  addCategory: () => {},
+  removeCategory: () => {},
 };
 
 interface FilterBreedsProviderProps {
@@ -30,29 +36,51 @@ const FilterBreedsProvider: React.FC<FilterBreedsProviderProps> = ({
   const { breeds } = useContext(BreedsContext);
   const [filteredBreeds, setFilteredBreeds] = useState<BreedsType>(breeds);
   const [name, setName] = useState<string>("");
-  const [category, setCategory] = useState<string>("all");
+  const [categories, setCategories] = useState<Array<string>>(["All"]);
 
   useEffect(() => {
     let b = breeds.filter((breed: BreedType) => {
-      return (
-        (category === "all"
-          ? true
-          : breed.breed_group
-              ?.toLowerCase()
-              ?.includes(category.toLowerCase())) &&
-        breed.name.toLowerCase().includes(name.toLowerCase())
-      );
-    });
-    setFilteredBreeds(b);
-  }, [name, category, breeds]);
+      if (categories.includes("All")) {
+        return name.length === 0
+          ? breed
+          : breed.name.toLowerCase().includes(name.toLowerCase());
+      }
 
-  useEffect(() => {}, [category]);
+      const breedCategory = breed.breed_group;
+      const isCategoryPresent = categories.includes(breedCategory);
+
+      return name.length === 0
+        ? breed && isCategoryPresent
+        : breed.name.toLowerCase().includes(name.toLowerCase()) &&
+            isCategoryPresent;
+    });
+
+    setFilteredBreeds(b);
+  }, [name, categories, breeds]);
+
+  function removeCategory(category: string) {
+    const newCategories = categories.filter((c: string) => c !== category);
+    setCategories([...newCategories]);
+  }
+
+  function addCategory(category: string) {
+    setCategories([...categories, category]);
+  }
+
+  useEffect(() => {
+    if (categories.length === 0) {
+      setCategories(["All"]);
+    }
+  }, [categories]);
 
   const filterBreedsValue = {
     breeds,
     filteredBreeds,
     filterByName: setName,
-    filterByCategory: setCategory,
+    currentCategories: categories,
+    filterByCategories: setCategories,
+    addCategory,
+    removeCategory,
   };
 
   return (
