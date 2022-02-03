@@ -5,10 +5,13 @@ import React, { useState } from "react";
 
 import Button from "@/common/components/Button";
 import Container from "@/common/components/Container";
+
+import Category from "./Filters/Category";
+
 const filters = [
   {
     title: "Category",
-    component: <h1>Lorem ipsum dolor sit.</h1>,
+    component: <Category />,
   },
   {
     title: "Size",
@@ -48,7 +51,7 @@ const Filter: React.FC = () => {
         className="fixed z-10 inset-0 overflow-y-auto"
       >
         <Container customClasses="bg-white shadow-2xl pt-6 pb-8 rounded-b-2xl">
-          <Dialog.Title className="mb-8 font-bold text-2xl">
+          <Dialog.Title className="mb-8 font-bold text-2xl text-green-800">
             Filter breeds
           </Dialog.Title>
           <>
@@ -57,7 +60,7 @@ const Filter: React.FC = () => {
                 <Disclosure>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="rounded-xl w-full flex items-center justify-between sm:focus-visible:text-green-700">
+                      <Disclosure.Button className="rounded-xl w-full flex items-center justify-between sm:focus-visible:text-green-800">
                         <span className="font-semibold text-xl">
                           {filter.title}
                         </span>
