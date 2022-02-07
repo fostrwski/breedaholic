@@ -1,39 +1,33 @@
 import "@/common/styles/globals.css";
 
 import type { AppProps } from "next/app";
-import React, { useState } from "react";
+import App from "next/app";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-import { BreedsContext } from "@/common/context/Breeds";
-import { FilterBreedsProvider } from "@/common/context/FilterBreeds";
-import { BreedsType } from "@/common/types";
-import { GET_BREEDS_URL } from "@/common/utils/api";
+import { fetchBreeds } from "@/common/services/breeds";
+import type { AppStore } from "@/common/store";
+import { wrapper } from "@/common/store";
 
-interface MyAppProps extends AppProps {
-  fetchedBreeds: BreedsType;
-}
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBreeds());
+  }, [dispatch]);
 
-const MyApp: React.FC<MyAppProps> & {
-  getInitialProps: () => object;
-} = ({ Component, pageProps, fetchedBreeds }) => {
-  const [breeds] = useState<BreedsType>(fetchedBreeds);
-
-  const breedsContextValue = {
-    breeds,
-  };
-
-  return (
-    <BreedsContext.Provider value={breedsContextValue}>
-      <FilterBreedsProvider>
-        <Component {...pageProps} />
-      </FilterBreedsProvider>
-    </BreedsContext.Provider>
-  );
+  return <Component {...pageProps} />;
 };
 
-MyApp.getInitialProps = async () => {
-  const res = await fetch(GET_BREEDS_URL);
-  const breeds = await res.json();
-  return { fetchedBreeds: breeds };
-};
+MyApp.getInitialProps = wrapper.getInitialAppProps(
+  (store: AppStore) => async (context) => {
+    await store.dispatch(fetchBreeds());
 
-export default MyApp;
+    return {
+      pageProps: {
+        ...(await App.getInitialProps(context)).pageProps,
+      },
+    };
+  }
+);
+
+export default wrapper.withRedux(MyApp);
