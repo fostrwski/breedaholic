@@ -43,7 +43,7 @@ export const breedsSlice = createSlice({
       .addCase(HYDRATE, (state, action: any) => {
         return {
           ...state,
-          ...action.payload.breeds.data,
+          ...action.payload.breeds,
         };
       });
   },
