@@ -1,4 +1,4 @@
-interface BreedType {
+interface Breed {
   id: number;
   name: string;
   temperament: string;
@@ -6,11 +6,11 @@ interface BreedType {
   origin?: string;
   weight: {
     imperial: string;
-    metrical: string;
+    metric: string;
   };
   height: {
     imperial: string;
-    metrical: string;
+    metric: string;
   };
   image?: {
     id: string;
@@ -22,6 +22,4 @@ interface BreedType {
   breed_group: string;
 }
 
-type BreedsType = Array<BreedType>;
-
-export type { BreedsType, BreedType };
+export type { Breed };
