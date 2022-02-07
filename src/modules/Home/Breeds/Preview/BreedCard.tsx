@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-import { BreedType } from "@/common/types";
+import type { Breed } from "@/common/types";
 
 interface CardProps {
-  breed: BreedType;
+  breed: Breed;
 }
 
 const BreedCard: React.FC<CardProps> = ({ breed, ...props }) => {
