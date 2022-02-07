@@ -1,16 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-import { useFilterBreeds } from "@/common/context/FilterBreeds";
-import { BreedType } from "@/common/types";
+import { selectBreeds } from "@/common/services/breeds";
+import type { Breed } from "@/common/types";
 
 import BreedCard from "./BreedCard";
 
 const Preview: React.FC = () => {
-  const { filteredBreeds } = useFilterBreeds();
+  const breeds = useSelector(selectBreeds());
 
   return (
     <div className="grid gap-6">
-      {filteredBreeds.map((breed: BreedType) => {
+      {breeds.map((breed: Breed) => {
         return (
           <BreedCard
             key={breed.id}
@@ -22,7 +23,7 @@ const Preview: React.FC = () => {
           />
         );
       })}
-      {filteredBreeds.length === 0 && (
+      {breeds.length === 0 && (
         <div className="text-center text-lg">
           <span data-cy="breeds-not-found-message">
             {/* eslint-disable-next-line react/no-unescaped-entities */}
