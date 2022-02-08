@@ -6,10 +6,12 @@ import type { AppState } from "@/common/store";
 import type { Breed } from "@/common/types";
 
 import { GET_BREEDS_URL } from "../api";
+import filterByCategories from "./filterByCategory";
+import filterByName from "./filterByName";
 
 interface Filters {
   name?: string;
-  category?: Array<string>;
+  categories?: Array<string>;
   temperament?: Array<string>;
 }
 
@@ -25,7 +27,7 @@ const initialState: BreedsState = {
   filteredBreeds: [],
   filters: {
     name: "",
-    category: [""],
+    categories: ["All"],
     temperament: [""],
   },
   status: "idle",
@@ -45,15 +47,17 @@ export const breedsSlice = createSlice({
     filterBreeds: (state: any, action: PayloadAction<Filters>) => {
       state.filters = { ...state.filters, ...action.payload };
 
-      if (state.filters.name === "") {
-        state.filteredBreeds = state.data;
-      } else {
-        state.filteredBreeds = state.data.filter((breed: Breed) => {
-          return breed.name
-            .toLowerCase()
-            .includes(state.filters.name.toLowerCase());
-        });
-      }
+      // Filter by name
+      const filteredBreedsByName = filterByName(state.data, state.filters.name);
+
+      // Filter by categories
+      const filteredBreedsByCategories = filterByCategories(
+        state.data,
+        state.filters.categories
+      );
+
+      console.log(filteredBreedsByName);
+      console.log(filteredBreedsByCategories);
     },
   },
   extraReducers(builder) {
