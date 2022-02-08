@@ -11,7 +11,7 @@ const Preview: React.FC = () => {
 
   return (
     <div className="grid gap-6">
-      {breeds.data.map((breed: Breed) => {
+      {breeds.filteredBreeds.map((breed: Breed) => {
         return (
           <BreedCard
             key={breed.id}
@@ -24,7 +24,7 @@ const Preview: React.FC = () => {
         );
       })}
       {breeds.status === "loading" && <>Loading...</>}
-      {breeds.status === "idle" && breeds.data.length === 0 && (
+      {breeds.status === "idle" && breeds.filteredBreeds.length === 0 && (
         <div className="text-center text-lg">
           <span data-cy="breeds-not-found-message">
             {/* eslint-disable-next-line react/no-unescaped-entities */}
