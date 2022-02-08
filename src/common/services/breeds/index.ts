@@ -4,6 +4,7 @@ import { HYDRATE } from "next-redux-wrapper";
 
 import type { AppState } from "@/common/store";
 import type { Breed } from "@/common/types";
+import mergeArraysByCommonElements from "@/common/utils/mergeArraysByCommonElements";
 
 import { GET_BREEDS_URL } from "../api";
 import filterByCategories from "./filterByCategory";
@@ -56,8 +57,12 @@ export const breedsSlice = createSlice({
         state.filters.categories
       );
 
-      console.log(filteredBreedsByName);
-      console.log(filteredBreedsByCategories);
+      const mergedFilteredBreeds = mergeArraysByCommonElements(
+        [filteredBreedsByName, filteredBreedsByCategories],
+        "id"
+      );
+
+      state.filteredBreeds = mergedFilteredBreeds;
     },
   },
   extraReducers(builder) {
