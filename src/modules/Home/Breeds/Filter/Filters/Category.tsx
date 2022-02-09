@@ -12,6 +12,10 @@ const Category: React.FC = () => {
 
   const toggleCategory = (category: string) => {
     if (selectedCategories!.includes(category)) {
+      const newCategories = selectedCategories.filter(
+        (selectedCategory) => selectedCategory !== category
+      );
+      dispatch(filterBreeds({ categories: newCategories }));
     } else if (category === "All") {
       dispatch(filterBreeds({ categories: [] }));
     } else {
