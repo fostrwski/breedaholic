@@ -50,7 +50,7 @@ const Filter: React.FC = () => {
         onClose={handleClose}
         className="fixed z-10 inset-0 overflow-y-auto"
       >
-        <Container customClasses="bg-white shadow-2xl pt-6 pb-8 rounded-b-2xl">
+        <Container customClasses="bg-white shadow-2xl pt-6 pb-8 rounded-b-2xl max-w-full">
           <Dialog.Title className="mb-8 font-bold text-2xl text-green-800">
             Filter breeds
           </Dialog.Title>

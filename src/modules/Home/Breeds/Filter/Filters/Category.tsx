@@ -23,9 +23,11 @@ const Category: React.FC = () => {
     }
   };
 
+  const categories = ["All", "Herding", "Working", "Terrier", "Hound", "Toy"];
+
   return (
-    <div className="flex gap-2 text-sm">
-      {["All", "Toy", "Herding"].map((category) => (
+    <div className="flex flex-wrap gap-2 text-sm">
+      {categories.map((category: string) => (
         <Button
           key={category}
           customClasses={`text-gray-800 bg-gray-100 rounded-xl ${
