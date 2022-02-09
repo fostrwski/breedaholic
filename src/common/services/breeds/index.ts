@@ -48,10 +48,11 @@ export const breedsSlice = createSlice({
     filterBreeds: (state: any, action: PayloadAction<Filters>) => {
       state.filters = { ...state.filters, ...action.payload };
 
-      // Filter by name
-      const filteredBreedsByName = filterByName(state.data, state.filters.name);
+      const filteredBreedsByName =
+        state.filters.name.length === 0
+          ? state.data
+          : filterByName(state.data, state.filters.name);
 
-      // Filter by categories
       const filteredBreedsByCategories = filterByCategories(
         state.data,
         state.filters.categories
@@ -89,6 +90,3 @@ export const { filterBreeds } = breedsSlice.actions;
 export const selectBreeds = () => (state: AppState) => state.breeds;
 
 export default breedsSlice.reducer;
-function breed(breed: any, Breed: any): any {
-  throw new Error("Function not implemented.");
-}
