@@ -5,7 +5,7 @@ const filterByCategories = (
   categories: Array<string>
 ): Array<Breed> => {
   const filteredBreeds = breeds.filter((breed: Breed) => {
-    if (categories.includes("All")) return true;
+    if (categories.length === 0) return true;
     return categories.includes(breed.breed_group);
   });
 

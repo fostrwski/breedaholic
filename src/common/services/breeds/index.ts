@@ -28,7 +28,7 @@ const initialState: BreedsState = {
   filteredBreeds: [],
   filters: {
     name: "",
-    categories: ["All"],
+    categories: [],
     temperament: [""],
   },
   status: "idle",
@@ -87,6 +87,11 @@ export const breedsSlice = createSlice({
 
 export const { filterBreeds } = breedsSlice.actions;
 
-export const selectBreeds = () => (state: AppState) => state.breeds;
+export const selectFilteredBreeds = () => (state: AppState) =>
+  state.breeds.filteredBreeds;
+
+export const selectFilters = () => (state: AppState) => state.breeds.filters;
+
+export const selectStatus = () => (state: AppState) => state.breeds.status;
 
 export default breedsSlice.reducer;
