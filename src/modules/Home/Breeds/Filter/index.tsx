@@ -86,6 +86,7 @@ const Filter: React.FC = () => {
             customClasses="fixed bottom-4 py-4 text-lg w-1/2 inset-x-0 mx-auto"
             aria-label="Close filter breeds"
             onClick={handleClose}
+            data-cy="breeds-filter-dialog-close"
           >
             Close
           </Button>
@@ -95,6 +96,7 @@ const Filter: React.FC = () => {
         customClasses="fixed bottom-4 flex justify-center items-center py-4 gap-2 text-lg w-1/2 inset-x-0 mx-auto"
         onClick={handleOpen}
         aria-label="Filter breeds"
+        data-cy="breeds-filter-dialog-open"
       >
         <AdjustmentsIcon className="w-6 h-6" />
         <span>Filter</span>

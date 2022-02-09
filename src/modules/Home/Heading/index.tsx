@@ -19,11 +19,11 @@ const Heading: React.FC = () => {
       </h1>
 
       <Input
-        id="search-breed"
         type="search"
         placeholder="Search by name..."
         customClasses="text-lg placeholder:text-lg"
         onChange={handleChange}
+        data-cy="breeds-search-by-name"
       />
     </div>
   );
