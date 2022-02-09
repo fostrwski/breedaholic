@@ -11,17 +11,17 @@ interface CardProps {
 const BreedCard: React.FC<CardProps> = ({ breed, ...props }) => {
   return (
     <Link href={`/breed/${breed.id}`} passHref>
-      <a className="relative hover:opacity-10]" {...props}>
+      <a className="hover:opacity-10] relative" {...props}>
         <Image
           src={breed.image!.url}
           alt={breed.name}
           width={breed.image!.width}
           height={breed.image!.height}
           layout="responsive"
-          className="rounded-xl filter brightness-[48%]"
+          className="rounded-xl brightness-[48%] filter"
         />
-        <div className="absolute bottom-4 px-6 w-full text-white">
-          <div className="text-xl mb-2 font-semibold">{breed.name}</div>
+        <div className="absolute bottom-4 w-full px-6 text-white">
+          <div className="mb-2 text-xl font-semibold">{breed.name}</div>
           <div className="text-lg">{breed.temperament}</div>
         </div>
       </a>

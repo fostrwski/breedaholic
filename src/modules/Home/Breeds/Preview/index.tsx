@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectFilteredBreeds,selectStatus } from "@/common/services/breeds";
+import { selectFilteredBreeds, selectStatus } from "@/common/services/breeds";
 import type { Breed } from "@/common/types";
 
 import BreedCard from "./BreedCard";

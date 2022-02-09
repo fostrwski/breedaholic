@@ -48,10 +48,10 @@ const Filter: React.FC = () => {
       <Dialog
         open={isOpen}
         onClose={handleClose}
-        className="fixed z-10 inset-0 overflow-y-auto"
+        className="fixed inset-0 z-10 overflow-y-auto"
       >
         <Container customClasses="bg-white shadow-2xl pt-6 pb-8 rounded-b-2xl max-w-full">
-          <Dialog.Title className="mb-8 font-bold text-2xl text-green-800">
+          <Dialog.Title className="mb-8 text-2xl font-bold text-green-800">
             Filter breeds
           </Dialog.Title>
           <>
@@ -60,14 +60,14 @@ const Filter: React.FC = () => {
                 <Disclosure>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="rounded-xl w-full flex items-center justify-between sm:focus-visible:text-green-800">
-                        <span className="font-semibold text-xl">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-xl sm:focus-visible:text-green-800">
+                        <span className="text-xl font-semibold">
                           {filter.title}
                         </span>
                         {open ? (
-                          <ChevronUpIcon className="w-5 h-5" />
+                          <ChevronUpIcon className="h-5 w-5" />
                         ) : (
-                          <ChevronDownIcon className="w-5 h-5" />
+                          <ChevronDownIcon className="h-5 w-5" />
                         )}
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-4">
@@ -77,7 +77,7 @@ const Filter: React.FC = () => {
                   )}
                 </Disclosure>
                 {id !== filters.length - 1 && (
-                  <hr className="rounded-full my-4" />
+                  <hr className="my-4 rounded-full" />
                 )}
               </div>
             ))}
@@ -98,7 +98,7 @@ const Filter: React.FC = () => {
         aria-label="Filter breeds"
         data-cy="breeds-filter-dialog-open"
       >
-        <AdjustmentsIcon className="w-6 h-6" />
+        <AdjustmentsIcon className="h-6 w-6" />
         <span>Filter</span>
       </Button>
     </>

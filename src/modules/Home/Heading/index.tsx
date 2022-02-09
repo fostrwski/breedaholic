@@ -15,7 +15,7 @@ const Heading: React.FC = () => {
 
   return (
     <div className="text-center">
-      <h1 className="text-xl font-semibold mb-6">
+      <h1 className="mb-6 text-xl font-semibold">
         Search through <span className="text-green-700">hundreds</span> of
         different dog breeds!
       </h1>

@@ -27,15 +27,15 @@ const Breed: NextPage = () => {
           width={breed.image.width}
           height={breed.image.height}
           layout="responsive"
-          className="rounded-xl filter brightness-50"
+          className="rounded-xl brightness-50 filter"
         />
 
-        <h1 className="mt-4 text-2xl font-semibold absolute bottom-4 px-6 text-white">
+        <h1 className="absolute bottom-4 mt-4 px-6 text-2xl font-semibold text-white">
           {breed.name}
         </h1>
       </div>
 
-      <section className="mt-4 text-xl flex flex-col gap-4">
+      <section className="mt-4 flex flex-col gap-4 text-xl">
         <FeatureCard title="Temperament" content={breed.temperament} />
         <FeatureCard title="Bred for" content={breed.bred_for} />
         <FeatureCard title="Average life span" content={breed.life_span} />
