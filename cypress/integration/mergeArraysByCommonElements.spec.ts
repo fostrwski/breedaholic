@@ -1,7 +1,7 @@
 import mergeArraysByCommonElements from "@/common/utils/mergeArraysByCommonElements";
 
 describe("mergeArraysByCommonElements util", () => {
-  it("Should return array containing elements that are common for all given arrays.", () => {
+  it("Should find common elements for given arrays of objects and return an array containing them.", () => {
     const firstArray = [
       { name: "banana" },
       { name: "strawberry" },
