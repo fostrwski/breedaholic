@@ -1,11 +1,13 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Input from "@/common/components/Input";
-import { filterBreeds } from "@/common/services/breeds";
+import { filterBreeds, selectFilters } from "@/common/services/breeds";
 
 const Heading: React.FC = () => {
   const dispatch = useDispatch();
+
+  const breedsFilters = useSelector(selectFilters());
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     dispatch(filterBreeds({ name: event.target.value }));
@@ -23,6 +25,7 @@ const Heading: React.FC = () => {
         placeholder="Search breed"
         customClasses="text-lg placeholder:text-lg"
         onChange={handleChange}
+        value={breedsFilters.name}
         data-cy="breeds-search-by-name"
       />
     </div>
