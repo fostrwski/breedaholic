@@ -5,7 +5,7 @@
  * @return Array<any>
  */
 
-function mergeArraysByCommonElements(
+export default function mergeArraysByCommonElements(
   arrays: Array<Array<any>>,
   property: any
 ): Array<any> {
@@ -36,5 +36,3 @@ function mergeArraysByCommonElements(
       self.findIndex((obj: any) => obj[property] === element[property])
   );
 }
-
-export default mergeArraysByCommonElements;
