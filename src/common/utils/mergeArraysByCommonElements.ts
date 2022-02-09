@@ -1,15 +1,20 @@
-const mergeArraysByCommonElements = (
+/**
+ * Finds common elements for given arrays of objects and returns array containing them
+ * @param {Array<Array<any>>} arrays array containing arrays to be checked
+ * @param {string} property it's responsible for determining which objects' properties should be compared eg. comparing two given objects: obj1 and obj2, property is set to "name" - function will check if obj1["name"] === obj2["name"]
+ * @return Array<any>
+ */
+
+function mergeArraysByCommonElements(
   arrays: Array<Array<any>>,
   property: any
-): Array<any> => {
-  const currentElements: any = [];
+): Array<any> {
+  let currentElements: any = [];
   const commonElements: any = [];
 
   const firstArray = arrays[0];
 
-  for (let i = 0; i < firstArray.length; i++) {
-    currentElements.push(firstArray[i]);
-  }
+  currentElements = [...firstArray];
 
   for (let i = 1; i < arrays.length; i++) {
     const currentArray = arrays[i];
@@ -30,6 +35,6 @@ const mergeArraysByCommonElements = (
       index ===
       self.findIndex((obj: any) => obj[property] === element[property])
   );
-};
+}
 
 export default mergeArraysByCommonElements;
