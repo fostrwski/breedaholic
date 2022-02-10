@@ -85,6 +85,7 @@ export const breedsSlice = createSlice({
         };
 
         if (state.filters) nextState.filters = state.filters;
+        if (state.status) nextState.status = state.status;
 
         return nextState;
       });
