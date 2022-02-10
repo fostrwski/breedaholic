@@ -7,7 +7,7 @@ const NavBar: React.FC = () => {
   return (
     <nav className="mb-2">
       <Container customClasses="py-6 text-center">
-        <Link href="/home" passHref>
+        <Link href="/">
           <a className="text-4xl font-bold">
             Breeda<span className="text-green-700">holic</span> 🐶
           </a>
