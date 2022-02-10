@@ -10,7 +10,7 @@ interface CardProps {
 
 const BreedCard: React.FC<CardProps> = ({ breed, ...props }) => {
   return (
-    <Link href={`/breed/${breed.id}`} passHref>
+    <Link href={`/breed/${breed.id}`}>
       <a className="hover:opacity-10] relative" {...props}>
         <Image
           src={breed.image!.url}

@@ -1,4 +1,4 @@
-describe("Home page", () => {
+describe("Index page", () => {
   beforeEach(() => {
     cy.viewport("iphone-x");
     cy.visit("/");
