@@ -14,7 +14,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
 MyApp.getInitialProps = wrapper.getInitialAppProps(
   (store: AppStore) => async (context) => {
-    await store.dispatch(fetchBreeds());
+    if (store.getState().breeds.data.length === 0) {
+      await store.dispatch(fetchBreeds());
+    }
 
     return {
       pageProps: {
