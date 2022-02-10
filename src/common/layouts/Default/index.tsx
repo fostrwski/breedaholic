@@ -14,7 +14,7 @@ const DefaultLayout: React.FC<Props> = ({ children }) => {
     <>
       <NavBar />
       <Container>
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
       </Container>
       <Footer />
     </>
