@@ -41,31 +41,33 @@ export const fetchBreeds = createAsyncThunk("breeds/fetchBreeds", async () => {
   return breeds;
 });
 
+const reducers = {
+  filterBreeds: (state: any, action: PayloadAction<Filters>) => {
+    state.filters = { ...state.filters, ...action.payload };
+
+    const filteredBreedsByName =
+      state.filters.name.length === 0
+        ? state.data
+        : filterByName(state.data, state.filters.name);
+
+    const filteredBreedsByCategories = filterByCategories(
+      state.data,
+      state.filters.categories
+    );
+
+    const mergedFilteredBreeds = mergeArraysByCommonElements(
+      [filteredBreedsByName, filteredBreedsByCategories],
+      "id"
+    );
+
+    state.filteredBreeds = mergedFilteredBreeds;
+  },
+};
+
 export const breedsSlice = createSlice({
   name: "breeds",
   initialState,
-  reducers: {
-    filterBreeds: (state: any, action: PayloadAction<Filters>) => {
-      state.filters = { ...state.filters, ...action.payload };
-
-      const filteredBreedsByName =
-        state.filters.name.length === 0
-          ? state.data
-          : filterByName(state.data, state.filters.name);
-
-      const filteredBreedsByCategories = filterByCategories(
-        state.data,
-        state.filters.categories
-      );
-
-      const mergedFilteredBreeds = mergeArraysByCommonElements(
-        [filteredBreedsByName, filteredBreedsByCategories],
-        "id"
-      );
-
-      state.filteredBreeds = mergedFilteredBreeds;
-    },
-  },
+  reducers,
   extraReducers(builder) {
     builder
       .addCase(fetchBreeds.pending, (state) => {
@@ -73,14 +75,18 @@ export const breedsSlice = createSlice({
       })
       .addCase(fetchBreeds.fulfilled, (state, action: AnyAction) => {
         state.status = "idle";
-        state.data = state.data.concat(action.payload);
-        state.filteredBreeds = state.filteredBreeds.concat(action.payload);
+        state.data = action.payload;
+        state.filteredBreeds = action.payload;
       })
       .addCase(HYDRATE, (state, action: AnyAction) => {
-        return {
+        const nextState = {
           ...state,
           ...action.payload.breeds,
         };
+
+        if (state.filters) nextState.filters = state.filters;
+
+        return nextState;
       });
   },
 });
