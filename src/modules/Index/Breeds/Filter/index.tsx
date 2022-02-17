@@ -7,6 +7,7 @@ import Button from "@/common/components/Button";
 import Container from "@/common/components/Container";
 
 import Category from "./Filters/Category";
+import Size from "./Filters/Size";
 
 const filters = [
   {
@@ -15,7 +16,7 @@ const filters = [
   },
   {
     title: "Size",
-    component: <h1>Lorem ipsum dolor sit.</h1>,
+    component: <Size />,
   },
   {
     title: "Temperament",
@@ -99,7 +100,7 @@ const Filter: React.FC = () => {
         data-cy="breeds-filter-dialog-open"
       >
         <AdjustmentsIcon className="h-6 w-6" />
-        <span>Filter</span>
+        <span>Filters</span>
       </Button>
     </>
   );
