@@ -11,7 +11,7 @@ const Preview: React.FC = () => {
   const breedsStatus = useSelector(selectStatus());
 
   return (
-    <div className="grid gap-6">
+    <div className="xs:grid-cols-1 grid gap-6 md:grid-cols-3">
       {filteredBreeds.map((breed: Breed) => {
         return (
           <BreedCard
