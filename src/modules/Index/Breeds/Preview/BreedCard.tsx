@@ -16,8 +16,6 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
         <Image
           src={breed.image!.url}
           alt={breed.name}
-          width={breed.image!.width}
-          height={breed.image!.height}
           layout="fill"
           objectFit="cover"
           className="rounded-xl brightness-[48%]"
