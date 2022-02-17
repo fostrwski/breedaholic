@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import wikidata from "../../../../public/wikidata.svg";
+
 const Footer: React.FC = () => {
   return (
     <footer className="mt-12 flex flex-col justify-center rounded-t-xl bg-gray-50 px-8 pb-32 pt-10">
@@ -8,7 +10,7 @@ const Footer: React.FC = () => {
         Copyright &copy; franekostrowski
       </div>
 
-      <Image src="/wikidata.svg" alt="Wikidata" width={60} height={40} />
+      <Image src={wikidata} alt="Wikidata" width={60} height={40} />
     </footer>
   );
 };
