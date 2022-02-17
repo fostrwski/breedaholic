@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         Copyright &copy; franekostrowski
       </div>
 
-      <Image src="/wikidata.svg" alt="Wikidata" width={60} height={40} />
+      <Image src="/wikidata.svg" alt="Wikidata" height={40} width={40} />
     </footer>
   );
 };
