@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="mb-6 text-center font-semibold">
         Copyright &copy; franekostrowski
       </div>
-      <div className="mx-auto w-3/5">
+      <div className="mx-auto w-[180px]">
         <Image
           src="/wikidata.png"
           alt="Wikidata"
