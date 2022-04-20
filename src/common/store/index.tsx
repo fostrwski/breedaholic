@@ -1,8 +1,7 @@
 import type { StateFromReducersMapObject } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
+import breedsReducer from "common/services/breeds";
 import { createWrapper } from "next-redux-wrapper";
-
-import breedsReducer from "@/common/services/breeds";
 
 const reducer = {
   breeds: breedsReducer,

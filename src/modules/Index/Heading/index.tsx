@@ -1,8 +1,8 @@
+import Button from "common/components/Button";
+import Input from "common/components/Input";
+import { filterBreeds, selectFilters } from "common/services/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import Input from "@/common/components/Input";
-import { filterBreeds, selectFilters } from "@/common/services/breeds";
 
 const Heading: React.FC = () => {
   const dispatch = useDispatch();
@@ -28,6 +28,8 @@ const Heading: React.FC = () => {
         value={breedsFilters.name}
         data-cy="breeds-search-by-name"
       />
+
+      <Button></Button>
     </div>
   );
 };

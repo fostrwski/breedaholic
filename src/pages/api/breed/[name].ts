@@ -1,7 +1,6 @@
+import { WIKIPEDIA_URL } from "common/services/api";
 import { NextApiRequest, NextApiResponse } from "next";
 import wiki from "wikijs";
-
-import { WIKIPEDIA_URL } from "@/common/services/api";
 
 export default async function handler(
   req: NextApiRequest,

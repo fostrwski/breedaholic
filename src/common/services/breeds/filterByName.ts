@@ -1,4 +1,4 @@
-import type { Breed } from "@/common/types";
+import type { Breed } from "common/types";
 
 const filterByName = (breeds: Array<Breed>, name: string): Array<Breed> => {
   const filteredBreeds = breeds.filter((breed: Breed) =>

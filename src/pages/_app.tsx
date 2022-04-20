@@ -1,12 +1,11 @@
-import "@/common/styles/globals.css";
+import "common/styles/globals.css";
 
+import { fetchBreeds } from "common/services/breeds";
+import type { AppStore } from "common/store";
+import { wrapper } from "common/store";
 import type { AppProps } from "next/app";
 import App from "next/app";
 import React from "react";
-
-import { fetchBreeds } from "@/common/services/breeds";
-import type { AppStore } from "@/common/store";
-import { wrapper } from "@/common/store";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />;

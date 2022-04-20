@@ -1,7 +1,6 @@
+import Container from "common/components/Container";
 import Link from "next/link";
 import React from "react";
-
-import Container from "@/common/components/Container";
 
 const NavBar: React.FC = () => {
   return (

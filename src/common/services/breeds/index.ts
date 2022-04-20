@@ -1,18 +1,20 @@
 import type { AnyAction, PayloadAction } from "@reduxjs/toolkit";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import type { AppState } from "common/store";
+import type { Breed } from "common/types";
+import findCommonElements from "common/utils/mergeArrays";
+import mergeArraysByCommonElements from "common/utils/mergeArraysByCommonElements";
 import { HYDRATE } from "next-redux-wrapper";
 
-import type { AppState } from "@/common/store";
-import type { Breed } from "@/common/types";
-import mergeArraysByCommonElements from "@/common/utils/mergeArraysByCommonElements";
-
 import { GET_BREEDS_URL } from "../api";
-import filterByCategories from "./filterByCategory";
+import filterByCategories from "./filterByCategories";
 import filterByName from "./filterByName";
+import filterBySize from "./filterBySize";
 
 interface Filters {
   name?: string;
   categories?: Array<string>;
+  sizes?: Array<string>;
   temperament?: Array<string>;
 }
 
@@ -29,7 +31,8 @@ const initialState: BreedsState = {
   filters: {
     name: "",
     categories: [],
-    temperament: [""],
+    sizes: [],
+    temperament: [],
   },
   status: "idle",
 };
@@ -55,12 +58,26 @@ const reducers = {
       state.filters.categories
     );
 
-    const mergedFilteredBreeds = mergeArraysByCommonElements(
+    const filteredBreedsBySizes = filterBySize(state.data, state.filters.sizes);
+
+    const filteredBreedsByNameAndCategories = mergeArraysByCommonElements(
       [filteredBreedsByName, filteredBreedsByCategories],
       "id"
     );
 
-    state.filteredBreeds = mergedFilteredBreeds;
+    const filteredBreedsByAll = mergeArraysByCommonElements(
+      [filteredBreedsByNameAndCategories, filteredBreedsBySizes],
+      "id"
+    );
+
+    console.log(
+      findCommonElements([
+        ...filteredBreedsByName,
+        ...filteredBreedsByCategories,
+      ])
+    );
+
+    state.filteredBreeds = filteredBreedsByAll;
   },
 };
 

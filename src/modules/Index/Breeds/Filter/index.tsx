@@ -1,10 +1,9 @@
 import { Dialog, Disclosure } from "@headlessui/react";
 import { AdjustmentsIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
+import Button from "common/components/Button";
+import Container from "common/components/Container";
 import React, { useState } from "react";
-
-import Button from "@/common/components/Button";
-import Container from "@/common/components/Container";
 
 import Category from "./Filters/Category";
 import Size from "./Filters/Size";
@@ -17,19 +16,6 @@ const filters = [
   {
     title: "Size",
     component: <Size />,
-  },
-  {
-    title: "Temperament",
-    component: <h1>Lorem ipsum dolor sit.</h1>,
-  },
-  {
-    title: "Color",
-    component: <h1>Lorem ipsum dolor sit.</h1>,
-  },
-
-  {
-    title: "Origin",
-    component: <h1>Lorem ipsum dolor sit.</h1>,
   },
 ];
 

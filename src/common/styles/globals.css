@@ -58,6 +58,6 @@
   [type="week"],
   [multiple],
   textarea {
-    @apply w-full rounded-full bg-gray-100 px-6 py-2;
+    @apply w-full rounded-xl bg-gray-100 px-6 py-2;
   }
 }

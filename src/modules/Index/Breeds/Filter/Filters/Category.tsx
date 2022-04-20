@@ -1,8 +1,7 @@
+import Button from "common/components/Button";
+import { filterBreeds, selectFilters } from "common/services/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import Button from "@/common/components/Button";
-import { filterBreeds, selectFilters } from "@/common/services/breeds";
 
 const Category: React.FC = () => {
   const dispatch = useDispatch();

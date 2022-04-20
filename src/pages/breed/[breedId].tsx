@@ -1,15 +1,14 @@
 // @ts-nocheck
 
+import useFetch from "common/hooks/useFetch";
+import DefaultLayout from "common/layouts/Default";
+import { selectBreeds } from "common/services/breeds";
+import FeatureCard from "modules/Breed/FeatureCard";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-
-import useFetch from "@/common/hooks/useFetch";
-import DefaultLayout from "@/common/layouts/Default";
-import { selectBreeds } from "@/common/services/breeds";
-import FeatureCard from "@/modules/Breed/FeatureCard";
 
 const Breed: NextPage = () => {
   const router = useRouter();
@@ -43,6 +42,7 @@ const Breed: NextPage = () => {
           <FeatureCard title="Bred for" content={breed.bred_for} />
           <FeatureCard title="Origin" content={breed.origin} />
           <FeatureCard title="Average life span" content={breed.life_span} />
+          <FeatureCard title="Weight" content={`${breed.weight.metric} kg`} />
           <FeatureCard title="Size" content={`${breed.height.metric} cm`} />
           <FeatureCard
             title="Description"
