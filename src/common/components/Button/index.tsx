@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       {...props}
-      className={`rounded-full bg-green-800 px-4 py-2 font-bold text-white ${customClasses}`}
+      className={`rounded-lg px-4 py-2 font-bold ${customClasses}`}
     >
       {children}
     </button>

@@ -1,3 +1,4 @@
+import { AdjustmentsIcon } from "@heroicons/react/outline";
 import Button from "common/components/Button";
 import Input from "common/components/Input";
 import { filterBreeds, selectFilters } from "common/services/breeds";
@@ -20,16 +21,20 @@ const Heading: React.FC = () => {
         different dog breeds!
       </h1>
 
-      <Input
-        type="search"
-        placeholder="Search breed"
-        customClasses="text-lg placeholder:text-lg"
-        onChange={handleChange}
-        value={breedsFilters.name}
-        data-cy="breeds-search-by-name"
-      />
+      <div className="flex gap-2">
+        <Input
+          type="search"
+          placeholder="Search breed"
+          customClasses="text-lg placeholder:text-lg"
+          onChange={handleChange}
+          value={breedsFilters.name}
+          data-cy="breeds-search-by-name"
+        />
 
-      <Button></Button>
+        <Button customClasses="p-2">
+          <AdjustmentsIcon className="h-6 w-6" />
+        </Button>
+      </div>
     </div>
   );
 };
