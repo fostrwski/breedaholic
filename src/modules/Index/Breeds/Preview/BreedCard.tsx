@@ -1,8 +1,7 @@
+import type { Breed } from "common/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-import type { Breed } from "@/common/types";
 
 interface CardProps {
   breed: Breed;
