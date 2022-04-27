@@ -1,5 +1,3 @@
-import { AdjustmentsIcon } from "@heroicons/react/outline";
-import Button from "common/components/Button";
 import Input from "common/components/Input";
 import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
@@ -22,8 +20,7 @@ const Heading: React.FC = () => {
         Find <span className="text-green-700">the dog breed</span> you're
         looking for!
       </h1>
-
-      <div className="flex gap-2">
+      <div className="flex items-center gap-2">
         <Input
           type="search"
           placeholder="Search breed"
