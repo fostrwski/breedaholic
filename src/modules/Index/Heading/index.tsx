@@ -1,7 +1,7 @@
 import { AdjustmentsIcon } from "@heroicons/react/outline";
 import Button from "common/components/Button";
 import Input from "common/components/Input";
-import { filterBreeds, selectFilters } from "common/services/breeds";
+import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 

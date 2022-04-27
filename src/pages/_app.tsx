@@ -1,6 +1,6 @@
 import "common/styles/globals.css";
 
-import { fetchBreeds } from "common/services/breeds";
+import { fetchBreeds } from "common/redux/breeds";
 import type { AppStore } from "common/store";
 import { wrapper } from "common/store";
 import type { AppProps } from "next/app";

@@ -1,5 +1,5 @@
 import Button from "common/components/Button";
-import { filterBreeds, selectFilters } from "common/services/breeds";
+import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
