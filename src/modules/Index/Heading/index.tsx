@@ -5,6 +5,8 @@ import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import Filter from "./Filter";
+
 const Heading: React.FC = () => {
   const dispatch = useDispatch();
 
@@ -31,9 +33,7 @@ const Heading: React.FC = () => {
           data-cy="breeds-search-by-name"
         />
 
-        <Button customClasses="p-2">
-          <AdjustmentsIcon className="h-6 w-6" />
-        </Button>
+        <Filter />
       </div>
     </div>
   );

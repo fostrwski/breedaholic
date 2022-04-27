@@ -79,15 +79,12 @@ const Filter: React.FC = () => {
           </Button>
         </Container>
       </Dialog>
-      {/* Hidden for now */}
       <Button
-        customClasses="fixed hidden bottom-4 flex justify-center items-center py-4 gap-2 text-lg w-1/2 inset-x-0 mx-auto z-[10]"
         onClick={handleOpen}
         aria-label="Filter breeds"
         data-cy="breeds-filter-dialog-open"
       >
         <AdjustmentsIcon className="h-6 w-6" />
-        <span>Filters</span>
       </Button>
     </>
   );
