@@ -1,4 +1,4 @@
-import { WIKIPEDIA_URL } from "common/services/api";
+import { WIKIPEDIA_URL } from "common/utils/api";
 import { NextApiRequest, NextApiResponse } from "next";
 import wiki from "wikijs";
 

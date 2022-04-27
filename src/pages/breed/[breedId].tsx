@@ -2,7 +2,7 @@
 
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
-import { selectBreeds } from "common/services/breeds";
+import { selectBreeds } from "common/redux/breeds";
 import FeatureCard from "modules/Breed/FeatureCard";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
