@@ -58,10 +58,13 @@ const reducers = {
 
     const filteredBreedsBySizes = filterBySize(state.data, state.filters.sizes);
 
-    state.filteredBreeds = [
-      ...filteredBreedsByName,
-      ...filteredBreedsByCategories,
-    ];
+    const filteredBreeds = filteredBreedsByName.filter(
+      (element: any) =>
+        filteredBreedsByCategories.includes(element) &&
+        filteredBreedsBySizes.includes(element)
+    );
+
+    state.filteredBreeds = filteredBreeds;
   },
 };
 
