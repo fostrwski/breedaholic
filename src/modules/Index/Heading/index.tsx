@@ -17,8 +17,8 @@ const Heading: React.FC = () => {
   return (
     <div className="text-center">
       <h1 className="mb-6 text-xl font-semibold">
-        Search through <span className="text-green-700">hundreds</span> of
-        different dog breeds!
+        Find <span className="text-green-700">the dog breed</span> you're
+        looking for!
       </h1>
 
       <div className="flex gap-2">
