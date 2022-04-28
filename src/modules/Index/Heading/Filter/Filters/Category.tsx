@@ -29,7 +29,7 @@ const Category: React.FC = () => {
       {categories.map((category: string) => (
         <Button
           key={category}
-          customClasses={`text-gray-800 bg-gray-100 !rounded-xl ${
+          customClasses={`text-gray-800 bg-gray-100 ${
             category === "All" && selectedCategories!.length === 0
               ? "bg-gray-200"
               : ""

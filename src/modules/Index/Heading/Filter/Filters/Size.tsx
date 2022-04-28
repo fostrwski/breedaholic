@@ -30,7 +30,7 @@ const Size: React.FC = () => {
       {sizes.map((size: string) => (
         <Button
           key={size}
-          customClasses={`text-gray-800 bg-gray-100 !rounded-xl ${
+          customClasses={`text-gray-800 bg-gray-100 ${
             size === "All" && selectedSizes!.length === 0 ? "bg-gray-200" : ""
           } ${
             size !== "All" && selectedSizes!.includes(size) ? "bg-gray-200" : ""
