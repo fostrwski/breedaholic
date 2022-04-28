@@ -27,7 +27,7 @@ const Filter: React.FC = () => {
       >
         <AdjustmentsIcon className="h-6 w-6" />
       </Popover.Button>
-      <Popover.Panel className="absolute inset-x-6 z-[100] mt-6 rounded-lg bg-gray-50 p-6 lg:inset-x-28">
+      <Popover.Panel className="absolute inset-x-6 z-[100] mt-6 rounded-lg bg-gray-50 px-6 py-4 lg:inset-x-28">
         <>
           {filters.map((filter, id) => (
             <div key={filter.title}>
