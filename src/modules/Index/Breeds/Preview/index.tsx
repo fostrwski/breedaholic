@@ -1,4 +1,8 @@
-import { selectFilteredBreeds, selectStatus } from "common/redux/breeds";
+import {
+  selectFilteredBreeds,
+  selectFilters,
+  selectStatus,
+} from "common/redux/breeds";
 import type { Breed } from "common/types";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -8,9 +12,19 @@ import BreedCard from "./BreedCard";
 const Preview: React.FC = () => {
   const filteredBreeds = useSelector(selectFilteredBreeds());
   const breedsStatus = useSelector(selectStatus());
+  const breedsFilters = useSelector(selectFilters());
 
   return (
     <div className="xs:grid-cols-1 grid gap-6 md:grid-cols-3">
+      {breedsFilters.name !== "" ||
+      breedsFilters.categories!.length !== 0 ||
+      breedsFilters.sizes!.length !== 0 ? (
+        <p>
+          Found <strong>{filteredBreeds.length}</strong> matching results
+        </p>
+      ) : (
+        ""
+      )}
       {filteredBreeds.map((breed: Breed) => {
         return (
           <BreedCard
@@ -25,12 +39,13 @@ const Preview: React.FC = () => {
       })}
       {breedsStatus === "loading" && <>Loading...</>}
       {breedsStatus === "idle" && filteredBreeds.length === 0 && (
-        <div className="text-center text-lg">
-          <span data-cy="breeds-not-found-message">
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
-            We couldn't find any breeds
-          </span>
-        </div>
+        <p
+          className="text-center text-lg font-semibold"
+          data-cy="breeds-not-found-message"
+        >
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          We couldn't find any breeds :(
+        </p>
       )}
     </div>
   );
