@@ -16,11 +16,12 @@ const Heading: React.FC = () => {
 
   return (
     <div className="text-center">
-      <h1 className="mb-6 text-xl font-semibold">
-        Find <span className="font-bold text-green-700">the dog breed</span>{" "}
+      <h1 className="text-xl font-semibold">
+        We help you
+        <span className="font-bold text-green-700"> find the dog breed </span>
         you're looking for!
       </h1>
-      <div className="flex items-center gap-2">
+      <div className="mt-6 flex items-center gap-2">
         <Input
           type="search"
           placeholder="Search breed"
