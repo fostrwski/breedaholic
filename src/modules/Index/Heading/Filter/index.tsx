@@ -4,6 +4,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
 import React from "react";
 
 import Category from "./Filters/Category";
+import LifeSpan from "./Filters/LifeSpan";
 import Size from "./Filters/Size";
 
 const filters = [
@@ -14,6 +15,10 @@ const filters = [
   {
     title: "Size",
     component: <Size />,
+  },
+  {
+    title: "Life span",
+    component: <LifeSpan />,
   },
 ];
 
@@ -27,11 +32,11 @@ const Filter: React.FC = () => {
       >
         <AdjustmentsIcon className="h-6 w-6" />
       </Popover.Button>
-      <Popover.Panel className="absolute inset-x-6 z-[100] mt-6 rounded-lg bg-gray-50 px-6 py-4 lg:inset-x-28">
+      <Popover.Panel className="absolute inset-x-6 z-[100] mt-6 rounded-lg bg-gray-50 p-6 lg:inset-x-28">
         <>
           {filters.map((filter, id) => (
             <div key={filter.title}>
-              <Disclosure>
+              <Disclosure defaultOpen>
                 {({ open }) => (
                   <>
                     <Disclosure.Button className="flex w-full items-center justify-between rounded-xl">
