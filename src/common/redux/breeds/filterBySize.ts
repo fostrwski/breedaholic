@@ -2,6 +2,8 @@ import type { Breed } from "common/types";
 
 const filterBySize = (breeds: Array<Breed>, sizes: Array<string>) => {
   const filteredBreeds = breeds.filter((breed: Breed) => {
+    if (sizes.length === 0) return true;
+
     const minWeight = Math.round(
       parseFloat(breed.weight.imperial.split(" ")[0])
     );
