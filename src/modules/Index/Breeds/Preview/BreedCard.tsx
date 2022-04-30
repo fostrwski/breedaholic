@@ -17,7 +17,7 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
           alt={breed.name}
           layout="fill"
           objectFit="cover"
-          className="rounded-xl brightness-[48%]"
+          className="rounded-lg brightness-[48%]"
         />
         <div className="absolute bottom-4 px-6 text-white">
           <div className="mb-2 text-xl font-semibold">{breed.name}</div>

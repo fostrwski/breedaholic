@@ -1,5 +1,7 @@
 // @ts-nocheck
 
+import { ShareIcon } from "@heroicons/react/outline";
+import Button from "common/components/Button";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
 import { selectBreeds } from "common/redux/breeds";
@@ -7,7 +9,7 @@ import FeatureCard from "modules/Breed/FeatureCard";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 const Breed: NextPage = () => {
@@ -24,20 +26,25 @@ const Breed: NextPage = () => {
     <DefaultLayout>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          {" "}
           <Image
             src={breed.image.url}
             alt={breed.name}
             width={breed.image.width}
             height={breed.image.height}
             layout="responsive"
-            className="rounded-xl"
+            className="rounded-lg"
           />
         </div>
         <section className="flex flex-col gap-4 text-xl">
-          <h1 className="mt-4 text-2xl font-semibold md:text-3xl">
-            {breed.name}
-          </h1>
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
+              {breed.name}
+            </h1>
+
+            <Button customClasses="p-2 rounded-full">
+              <ShareIcon className="h-6 w-6" />
+            </Button>
+          </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
           <FeatureCard title="Origin" content={breed.origin} />
