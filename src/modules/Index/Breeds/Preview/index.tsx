@@ -19,13 +19,13 @@ const Preview: React.FC = () => {
       {breedsFilters.name !== "" ||
       breedsFilters.categories!.length !== 0 ||
       breedsFilters.sizes!.length !== 0 ? (
-        <p>
+        <p className="mb-4">
           Found <b>{filteredBreeds.length}</b> matching results
         </p>
       ) : (
         ""
       )}
-      <div className="xs:grid-cols-1 mt-4 grid gap-6 md:grid-cols-3">
+      <div className="xs:grid-cols-1 grid gap-6 md:grid-cols-3">
         {filteredBreeds.map((breed: Breed) => {
           return (
             <BreedCard
