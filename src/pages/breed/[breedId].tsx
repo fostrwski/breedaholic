@@ -22,22 +22,22 @@ const Breed: NextPage = () => {
 
   return (
     <DefaultLayout>
-      <div className="gap- grid grid-cols-1 gap-6 md:grid-cols-2">
-        <div className="relative">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div>
+          {" "}
           <Image
             src={breed.image.url}
             alt={breed.name}
             width={breed.image.width}
             height={breed.image.height}
             layout="responsive"
-            className="rounded-xl brightness-50 filter"
+            className="rounded-xl"
           />
-
-          <h1 className="absolute bottom-4 px-6 text-2xl font-semibold text-white md:top-6 md:text-3xl">
-            {breed.name}
-          </h1>
         </div>
         <section className="flex flex-col gap-4 text-xl">
+          <h1 className="mt-4 text-2xl font-semibold md:text-3xl">
+            {breed.name}
+          </h1>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
           <FeatureCard title="Origin" content={breed.origin} />
@@ -46,7 +46,21 @@ const Breed: NextPage = () => {
           <FeatureCard title="Size" content={`${breed.height.metric} cm`} />
           <FeatureCard
             title="Description"
-            content={isLoading ? "Loading" : data?.breedDescription}
+            content={
+              isLoading ? (
+                "Loading"
+              ) : (
+                <>
+                  <p>{data?.breedDescription}</p>
+                  <p className="mt-4">
+                    <strong className="text-xs">
+                      Note: This data is fetched from wikipedia. It may contain
+                      some unverified information.
+                    </strong>
+                  </p>
+                </>
+              )
+            }
           />
         </section>
       </div>
