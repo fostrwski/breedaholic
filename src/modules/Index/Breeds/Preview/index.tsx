@@ -15,39 +15,41 @@ const Preview: React.FC = () => {
   const breedsFilters = useSelector(selectFilters());
 
   return (
-    <div className="xs:grid-cols-1 grid gap-6 md:grid-cols-3">
+    <>
       {breedsFilters.name !== "" ||
       breedsFilters.categories!.length !== 0 ||
       breedsFilters.sizes!.length !== 0 ? (
         <p>
-          Found <strong>{filteredBreeds.length}</strong> matching results
+          Found <b>{filteredBreeds.length}</b> matching results
         </p>
       ) : (
         ""
       )}
-      {filteredBreeds.map((breed: Breed) => {
-        return (
-          <BreedCard
-            key={breed.id}
-            breed={breed}
-            data-cy={`${breed.name
-              .toLowerCase()
-              .split(" ")
-              .join("-")}-preview-card`}
-          />
-        );
-      })}
-      {breedsStatus === "loading" && <>Loading...</>}
-      {breedsStatus === "idle" && filteredBreeds.length === 0 && (
-        <p
-          className="text-center text-lg font-semibold"
-          data-cy="breeds-not-found-message"
-        >
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          We couldn't find any breeds :(
-        </p>
-      )}
-    </div>
+      <div className="xs:grid-cols-1 mt-4 grid gap-6 md:grid-cols-3">
+        {filteredBreeds.map((breed: Breed) => {
+          return (
+            <BreedCard
+              key={breed.id}
+              breed={breed}
+              data-cy={`${breed.name
+                .toLowerCase()
+                .split(" ")
+                .join("-")}-preview-card`}
+            />
+          );
+        })}
+        {breedsStatus === "loading" && <>Loading...</>}
+        {breedsStatus === "idle" && filteredBreeds.length === 0 && (
+          <p
+            className="text-center text-lg font-semibold"
+            data-cy="breeds-not-found-message"
+          >
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            We couldn't find any breeds :(
+          </p>
+        )}
+      </div>
+    </>
   );
 };
 
