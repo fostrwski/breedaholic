@@ -1,4 +1,6 @@
 import "common/styles/globals.css";
+import "@fontsource/noto-sans/400.css";
+import "@fontsource/noto-sans/500.css";
 
 import { fetchBreeds } from "common/redux/breeds";
 import type { AppStore } from "common/store";

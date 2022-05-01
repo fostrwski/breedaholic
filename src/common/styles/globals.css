@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply font-sans;
+  }
+
   [type="text"],
   [type="email"],
   [type="url"],

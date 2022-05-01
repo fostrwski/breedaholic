@@ -9,6 +9,7 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
+    "@fontsource/noto-sans": "^4.5.9",
     "@headlessui/react": "^1.4.3",
     "@heroicons/react": "^1.0.5",
     "@reduxjs/toolkit": "^1.7.2",
