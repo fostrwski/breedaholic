@@ -19,7 +19,7 @@ const Category: React.FC = () => {
         onChange={handleChange}
       />
 
-      <p className="mt-2 text-lg lg:mt-4">
+      <p className="mt-2 lg:mt-4 lg:text-lg">
         <b>
           {value} {value === 1 ? "year" : "years"}
         </b>{" "}
