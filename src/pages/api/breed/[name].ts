@@ -11,7 +11,13 @@ export default async function handler(
   const breed = await wiki({ apiUrl: WIKIPEDIA_URL })
     // @ts-ignore
     .page(name)
-    .then((page) => page.summary());
+    .then(async (page) => {
+      return {
+        breedDescription: await page.summary(),
+        breedOrigin: await page.info().then((info) => info.country),
+        breedWikiUrl: page.url(),
+      };
+    });
 
-  res.status(200).json({ breedDescription: breed });
+  res.status(200).json(breed);
 }

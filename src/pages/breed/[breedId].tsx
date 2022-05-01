@@ -1,6 +1,10 @@
 // @ts-nocheck
 
-import { ShareIcon } from "@heroicons/react/outline";
+import {
+  ExclamationIcon,
+  InformationCircleIcon,
+  ShareIcon,
+} from "@heroicons/react/outline";
 import Button from "common/components/Button";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
@@ -35,7 +39,7 @@ const Breed: NextPage = () => {
             className="rounded-lg"
           />
         </div>
-        <section className="flex flex-col gap-4 text-xl">
+        <section className="flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
@@ -47,7 +51,10 @@ const Breed: NextPage = () => {
           </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
-          <FeatureCard title="Origin" content={breed.origin} />
+          <FeatureCard
+            title="Origin"
+            content={isLoading ? "Loading" : data?.breedOrigin}
+          />
           <FeatureCard title="Average life span" content={breed.life_span} />
           <FeatureCard title="Weight" content={`${breed.weight.metric} kg`} />
           <FeatureCard title="Size" content={`${breed.height.metric} cm`} />
@@ -58,17 +65,33 @@ const Breed: NextPage = () => {
                 "Loading"
               ) : (
                 <>
-                  <p>{data?.breedDescription}</p>
-                  <p className="mt-4">
-                    <strong className="text-xs">
-                      Note: This data is fetched from wikipedia. It may contain
-                      some unverified information.
-                    </strong>
-                  </p>
+                  {typeof data?.breedDescription !== "undefined" && (
+                    <>
+                      <p>{data?.breedDescription}</p>
+                      <p className="mt-4 leading-none">
+                        <strong className="text-sm">
+                          Note: This data is fetched from wikipedia. It may
+                          contain some unverified information.
+                        </strong>
+                      </p>
+                    </>
+                  )}
+
+                  {typeof data?.breedDescription === "undefined" && (
+                    <p>Unknown</p>
+                  )}
                 </>
               )
             }
           />
+          <a
+            className="mt-2 flex items-center gap-2"
+            href={data?.breedWikiUrl}
+            target="blank"
+          >
+            <InformationCircleIcon className="h-6 w-6" />
+            Click here for more information
+          </a>
         </section>
       </div>
     </DefaultLayout>
