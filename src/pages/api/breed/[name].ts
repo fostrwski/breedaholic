@@ -14,6 +14,7 @@ export default async function handler(
     .then(async (page) => {
       return {
         breedDescription: await page.summary(),
+        // @ts-ignore
         breedOrigin: await page.info().then((info) => info.country),
         breedWikiUrl: page.url(),
       };
