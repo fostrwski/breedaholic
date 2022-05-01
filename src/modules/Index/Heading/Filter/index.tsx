@@ -27,7 +27,7 @@ const Filter: React.FC = () => {
     <Popover>
       <Popover.Button
         aria-label="Filter breeds"
-        data-cy="breeds-filter-dialog-open"
+        data-cy="breeds-filter-popover-toggle"
         className="rounded-lg p-2"
       >
         <AdjustmentsIcon className="h-6 w-6" />

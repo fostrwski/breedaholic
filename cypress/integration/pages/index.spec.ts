@@ -10,11 +10,10 @@ describe("Index page", () => {
     cy.get("[data-cy=affenpinscher-preview-card]").should("not.exist");
   });
 
-  it("Should select 'Toy' filtering category and search for 'border collie' resulting in displaying an error message because this breed does not exist on category 'Toy'", () => {
-    cy.get("[data-cy=breeds-filter-dialog-open]").click();
-    cy.get("button").contains("Category").click();
+  it("Should select 'Toy' filtering category and search for 'border collie', results in displaying an error message because this breed does not exist on category 'Toy'", () => {
+    cy.get("[data-cy=breeds-filter-popover-toggle]").click();
     cy.get("button").contains("Toy").click();
-    cy.get("[data-cy=breeds-filter-dialog-close]").click();
+    cy.get("[data-cy=breeds-filter-popover-toggle]").click();
 
     cy.get("[data-cy=breeds-search-by-name]").type("border collie");
 
