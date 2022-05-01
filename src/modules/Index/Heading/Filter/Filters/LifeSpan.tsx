@@ -8,19 +8,22 @@ const Category: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center gap-2 text-sm lg:gap-4">
+    <div className="flex-col justify-start gap-2 text-left text-sm lg:gap-4">
       <input
         type="range"
         className="w-full appearance-none rounded-lg bg-gray-100 text-green-700 focus:cursor-pointer focus-visible:bg-gray-200 focus-visible:outline-none"
         step="1"
-        min="0"
-        max="12"
+        min="1"
+        max="14"
         value={value}
         onChange={handleChange}
       />
 
-      <p>
-        <b>{value}</b>
+      <p className="mt-2 text-lg lg:mt-4">
+        <b>
+          {value} {value === 1 ? "year" : "years"}
+        </b>{" "}
+        or more
       </p>
     </div>
   );
