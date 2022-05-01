@@ -3,6 +3,7 @@
 import {
   ExclamationIcon,
   InformationCircleIcon,
+  LinkIcon,
 } from "@heroicons/react/outline";
 import Button from "common/components/Button";
 import useFetch from "common/hooks/useFetch";
@@ -43,6 +44,9 @@ const Breed: NextPage = () => {
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
+            <Button customClasses="p-2 rounded-full">
+              <LinkIcon className="h-6 w-6" />
+            </Button>
           </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
@@ -80,7 +84,7 @@ const Breed: NextPage = () => {
             }
           />
           <a
-            className="mt-2 flex items-center gap-2"
+            className="mt-4 flex items-center gap-2"
             href={data?.breedWikiUrl}
             target="blank"
           >
