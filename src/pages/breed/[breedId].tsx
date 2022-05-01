@@ -40,7 +40,7 @@ const Breed: NextPage = () => {
           />
         </div>
         <section className="flex flex-col gap-4">
-          <div className="flex items-center justify-between">
+          <div className="inline-flex items-center gap-2">
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
