@@ -3,7 +3,6 @@
 import {
   ExclamationIcon,
   InformationCircleIcon,
-  ShareIcon,
 } from "@heroicons/react/outline";
 import Button from "common/components/Button";
 import useFetch from "common/hooks/useFetch";
@@ -44,10 +43,6 @@ const Breed: NextPage = () => {
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
-
-            <Button customClasses="p-2 rounded-full">
-              <ShareIcon className="h-6 w-6" />
-            </Button>
           </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
