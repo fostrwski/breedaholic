@@ -40,13 +40,13 @@ const Breed: NextPage = () => {
           />
         </div>
         <section className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2">
+          <div className="flex items-center justify-between gap-2">
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
-            <Button customClasses="p-2 rounded-full">
+            <button>
               <LinkIcon className="h-6 w-6" />
-            </Button>
+            </button>
           </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
