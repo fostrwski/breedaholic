@@ -45,9 +45,9 @@ const Breed: NextPage = () => {
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
-            <Button customClasses="!p-0">
+            <button>
               <LinkIcon className="h-6 w-6" />
-            </Button>
+            </button>
           </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
