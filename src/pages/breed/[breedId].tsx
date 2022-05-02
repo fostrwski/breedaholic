@@ -92,14 +92,14 @@ const Breed: NextPage = () => {
                               {!seeMore ? "show more" : "show less"}
                             </button>
                           </p>
-                          <p className="mt-4 leading-none">
-                            <strong className="text-sm">
-                              Note: This data is fetched from wikipedia. It may
-                              contain some unverified information.
-                            </strong>
-                          </p>
                         </>
                       )}
+                      <p className="mt-4 leading-none">
+                        <strong className="text-sm">
+                          Note: This data is fetched from wikipedia. It may
+                          contain some unverified information.
+                        </strong>
+                      </p>
                     </>
                   )}
 
