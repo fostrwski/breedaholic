@@ -24,7 +24,7 @@ const Category: React.FC = () => {
         onChange={handleChange}
       />
 
-      <p className="mt-2 lg:mt-4 lg:text-lg">
+      <p className="mt-4 lg:text-lg">
         <b>
           {selectedLifeSpan} {selectedLifeSpan === 1 ? "year" : "years"}
         </b>{" "}
