@@ -6,6 +6,7 @@ import {
   selectStatus,
 } from "common/redux/breeds";
 import type { Breed } from "common/types";
+import ClearFiltersButton from "modules/Index/Heading/Filter/Filters/ClearFiltersButton";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -27,10 +28,7 @@ const Preview: React.FC = () => {
           <p>
             Found <b>{filteredBreeds.length}</b> matching results
           </p>
-          <Button customClasses="text-red-600 hidden md:inline-flex items-center gap-2">
-            <TrashIcon className="h-6 w-6" />
-            Clear filters
-          </Button>
+          <ClearFiltersButton customClasses="hidden md:flex" />
         </div>
       ) : (
         ""

@@ -25,7 +25,7 @@ interface BreedsState {
   status: string;
 }
 
-const initialState: BreedsState = {
+export const initialState: BreedsState = {
   data: [],
   filteredBreeds: [],
   filters: {
@@ -76,10 +76,6 @@ const reducers = {
     });
 
     state.filteredBreeds = filteredBreeds;
-  },
-
-  clearFilters: (state: any) => {
-    state.filters = initialState.filters;
   },
 };
 

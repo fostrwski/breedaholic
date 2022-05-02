@@ -63,7 +63,7 @@ const Filter: React.FC = () => {
           ))}
         </>
 
-        <ClearFiltersButton />
+        <ClearFiltersButton customClasses="float-right md:hidden mt-6" />
       </Popover.Panel>
     </Popover>
   );
