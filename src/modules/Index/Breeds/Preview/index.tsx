@@ -1,3 +1,5 @@
+import { TrashIcon } from "@heroicons/react/outline";
+import Button from "common/components/Button";
 import {
   selectFilteredBreeds,
   selectFilters,
@@ -21,9 +23,15 @@ const Preview: React.FC = () => {
       breedsFilters.sizes!.length !== 0 ||
       // lifeSpan's default value is 6
       breedsFilters.lifeSpan !== 6 ? (
-        <p className="mb-4">
-          Found <b>{filteredBreeds.length}</b> matching results
-        </p>
+        <div className="mb-4 flex items-center justify-between gap-4">
+          <p>
+            Found <b>{filteredBreeds.length}</b> matching results
+          </p>
+          <Button customClasses="text-red-600 hidden md:inline-flex items-center gap-2">
+            <TrashIcon className="h-6 w-6" />
+            Clear filters
+          </Button>
+        </div>
       ) : (
         ""
       )}

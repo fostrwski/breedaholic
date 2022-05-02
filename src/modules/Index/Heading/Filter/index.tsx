@@ -4,6 +4,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
 import React from "react";
 
 import Category from "./Filters/Category";
+import ClearFiltersButton from "./Filters/ClearFiltersButton";
 import LifeSpan from "./Filters/LifeSpan";
 import Size from "./Filters/Size";
 
@@ -61,6 +62,8 @@ const Filter: React.FC = () => {
             </div>
           ))}
         </>
+
+        <ClearFiltersButton />
       </Popover.Panel>
     </Popover>
   );

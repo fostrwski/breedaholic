@@ -77,6 +77,10 @@ const reducers = {
 
     state.filteredBreeds = filteredBreeds;
   },
+
+  clearFilters: (state: any) => {
+    state.filters = initialState.filters;
+  },
 };
 
 export const breedsSlice = createSlice({
@@ -107,7 +111,7 @@ export const breedsSlice = createSlice({
   },
 });
 
-export const { filterBreeds } = breedsSlice.actions;
+export const { filterBreeds, clearFilters } = breedsSlice.actions;
 
 export const selectBreeds = () => (state: AppState) => state.breeds.data;
 
