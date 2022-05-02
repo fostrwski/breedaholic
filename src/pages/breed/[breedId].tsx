@@ -45,7 +45,7 @@ const Breed: NextPage = () => {
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
-            <Button customClasses="px-0 py-0">
+            <Button customClasses="!p-0">
               <LinkIcon className="h-6 w-6" />
             </Button>
           </div>
