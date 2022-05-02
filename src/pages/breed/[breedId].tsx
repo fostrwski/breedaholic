@@ -1,10 +1,6 @@
 // @ts-nocheck
 
-import {
-  ExclamationIcon,
-  InformationCircleIcon,
-  LinkIcon,
-} from "@heroicons/react/outline";
+import { InformationCircleIcon, LinkIcon } from "@heroicons/react/outline";
 import Button from "common/components/Button";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
