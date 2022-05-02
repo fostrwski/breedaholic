@@ -18,7 +18,9 @@ const Preview: React.FC = () => {
     <>
       {breedsFilters.name !== "" ||
       breedsFilters.categories!.length !== 0 ||
-      breedsFilters.sizes!.length !== 0 ? (
+      breedsFilters.sizes!.length !== 0 ||
+      // lifeSpan's default value is 6
+      breedsFilters.lifeSpan !== 6 ? (
         <p className="mb-4">
           Found <b>{filteredBreeds.length}</b> matching results
         </p>

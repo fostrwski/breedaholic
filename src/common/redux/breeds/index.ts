@@ -6,6 +6,7 @@ import { GET_BREEDS_URL } from "common/utils/api";
 import { HYDRATE } from "next-redux-wrapper";
 
 import filterByCategories from "./filterByCategories";
+import filterByLifeSpan from "./filterByLifeSpan";
 import filterByName from "./filterByName";
 import filterBySize from "./filterBySize";
 
@@ -13,6 +14,7 @@ interface Filters {
   name?: string;
   categories?: Array<string>;
   sizes?: Array<string>;
+  lifeSpan?: number;
   temperament?: Array<string>;
 }
 
@@ -30,6 +32,7 @@ const initialState: BreedsState = {
     name: "",
     categories: [],
     sizes: [],
+    lifeSpan: 6,
     temperament: [],
   },
   status: "idle",
@@ -58,10 +61,16 @@ const reducers = {
 
     const filteredBreedsBySize = filterBySize(state.data, state.filters.sizes);
 
-    const filteredBreeds = filteredBreedsByName.filter((element: any) => {
+    const filteredBreedsByLifeSpan = filterByLifeSpan(
+      state.data,
+      state.filters.lifeSpan
+    );
+
+    const filteredBreeds = filteredBreedsByName.filter((target: any) => {
       const elementExists =
-        filteredBreedsBySize.includes(element) &&
-        filteredBreedsByCategories.includes(element);
+        filteredBreedsBySize.includes(target) &&
+        filteredBreedsByCategories.includes(target) &&
+        filteredBreedsByLifeSpan.includes(target);
 
       return elementExists;
     });

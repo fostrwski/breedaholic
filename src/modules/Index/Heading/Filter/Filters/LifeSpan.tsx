@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import { filterBreeds, selectFilters } from "common/redux/breeds";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Category: React.FC = () => {
-  const [value, setValue] = useState<number>(0);
+  const dispatch = useDispatch();
+
+  const breedsFilters = useSelector(selectFilters());
+  const selectedLifeSpan = breedsFilters.lifeSpan;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(parseInt(e.target.value));
+    dispatch(filterBreeds({ lifeSpan: parseInt(e.currentTarget.value) }));
   };
 
   return (
@@ -13,15 +18,15 @@ const Category: React.FC = () => {
         type="range"
         className="w-full appearance-none rounded-lg bg-gray-100 text-green-700 focus:cursor-pointer focus-visible:bg-gray-200 focus-visible:outline-none"
         step="1"
-        min="1"
+        min="6"
         max="14"
-        value={value}
+        value={selectedLifeSpan}
         onChange={handleChange}
       />
 
       <p className="mt-2 lg:mt-4 lg:text-lg">
         <b>
-          {value} {value === 1 ? "year" : "years"}
+          {selectedLifeSpan} {selectedLifeSpan === 1 ? "year" : "years"}
         </b>{" "}
         or more
       </p>
