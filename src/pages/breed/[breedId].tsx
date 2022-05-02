@@ -84,9 +84,9 @@ const Breed: NextPage = () => {
                                 .split(" ")
                                 .slice(28)
                                 .join(" ")}
-                            </span>
+                            </span>{" "}
                             <button
-                              className="ml-2 text-gray-400"
+                              className="text-gray-400"
                               onClick={handleClick}
                             >
                               {!seeMore ? "show more" : "show less"}
