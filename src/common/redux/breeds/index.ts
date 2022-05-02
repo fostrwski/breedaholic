@@ -107,7 +107,7 @@ export const breedsSlice = createSlice({
   },
 });
 
-export const { filterBreeds, clearFilters } = breedsSlice.actions;
+export const { filterBreeds } = breedsSlice.actions;
 
 export const selectBreeds = () => (state: AppState) => state.breeds.data;
 

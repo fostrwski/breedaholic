@@ -19,6 +19,7 @@ const Heading: React.FC = () => {
       <h1 className="text-xl font-semibold">
         We help you
         <span className="font-bold text-green-700"> find the dog breed </span>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         you're looking for!
       </h1>
       <div className="mt-6 flex items-center gap-2">
