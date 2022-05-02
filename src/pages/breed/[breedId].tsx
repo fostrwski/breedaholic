@@ -71,31 +71,39 @@ const Breed: NextPage = () => {
                 <>
                   {typeof data?.breedDescription !== "undefined" && (
                     <>
-                      <p>
-                        {data?.breedDescription
-                          .split(" ")
-                          .slice(0, 28)
-                          .join(" ")}
-                        {!seeMore ? "..." : ""}
-                        <span className={`mt-4 ${!seeMore ? "hidden" : ""}`}>
-                          {data?.breedDescription
-                            .split(" ")
-                            .slice(28)
-                            .join(" ")}
-                        </span>
-                        <button
-                          className="ml-2 text-gray-400"
-                          onClick={handleClick}
-                        >
-                          {!seeMore ? "show more" : "show less"}
-                        </button>
-                      </p>
-                      <p className="mt-4 leading-none">
-                        <strong className="text-sm">
-                          Note: This data is fetched from wikipedia. It may
-                          contain some unverified information.
-                        </strong>
-                      </p>
+                      {data?.breedDescription.split(" ").length <= 28 ? (
+                        <p>{data?.breedDescription}</p>
+                      ) : (
+                        <>
+                          <p>
+                            {data?.breedDescription
+                              .split(" ")
+                              .slice(0, 28)
+                              .join(" ")}
+                            {!seeMore ? "..." : ""}
+                            <span
+                              className={`mt-4 ${!seeMore ? "hidden" : ""}`}
+                            >
+                              {data?.breedDescription
+                                .split(" ")
+                                .slice(28)
+                                .join(" ")}
+                            </span>
+                            <button
+                              className="ml-2 text-gray-400"
+                              onClick={handleClick}
+                            >
+                              {!seeMore ? "show more" : "show less"}
+                            </button>
+                          </p>
+                          <p className="mt-4 leading-none">
+                            <strong className="text-sm">
+                              Note: This data is fetched from wikipedia. It may
+                              contain some unverified information.
+                            </strong>
+                          </p>
+                        </>
+                      )}
                     </>
                   )}
 
