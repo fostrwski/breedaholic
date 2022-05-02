@@ -13,10 +13,11 @@ import FeatureCard from "modules/Breed/FeatureCard";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 const Breed: NextPage = () => {
+  const [seeMore, setSeeMore] = useState<boolean>(false);
   const router = useRouter();
   const { breedId } = router.query;
 
@@ -25,6 +26,10 @@ const Breed: NextPage = () => {
   const breed = breeds.find((breed) => breed.id === parseInt(breedId));
 
   const { data, error, isLoading } = useFetch(`/api/breed/${breed.name}`);
+
+  const handleClick = () => {
+    setSeeMore(!seeMore);
+  };
 
   return (
     <DefaultLayout>
@@ -44,9 +49,9 @@ const Breed: NextPage = () => {
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
-            <button>
+            <Button customClasses="px-0 py-0">
               <LinkIcon className="h-6 w-6" />
-            </button>
+            </Button>
           </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
           <FeatureCard title="Bred for" content={breed.bred_for} />
@@ -66,7 +71,25 @@ const Breed: NextPage = () => {
                 <>
                   {typeof data?.breedDescription !== "undefined" && (
                     <>
-                      <p>{data?.breedDescription}</p>
+                      <p>
+                        {data?.breedDescription
+                          .split(" ")
+                          .slice(0, 28)
+                          .join(" ")}
+                        {!seeMore ? "..." : ""}
+                        <span className={`mt-4 ${!seeMore ? "hidden" : ""}`}>
+                          {data?.breedDescription
+                            .split(" ")
+                            .slice(28)
+                            .join(" ")}
+                        </span>
+                        <button
+                          className="ml-2 text-gray-400"
+                          onClick={handleClick}
+                        >
+                          {!seeMore ? "show more" : "show less"}
+                        </button>
+                      </p>
                       <p className="mt-4 leading-none">
                         <strong className="text-sm">
                           Note: This data is fetched from wikipedia. It may
