@@ -1,8 +1,6 @@
-import { TrashIcon } from "@heroicons/react/outline";
-import Button from "common/components/Button";
 import {
+  selectAreBreedsFiltered,
   selectFilteredBreeds,
-  selectFilters,
   selectStatus,
 } from "common/redux/breeds";
 import type { Breed } from "common/types";
@@ -15,15 +13,11 @@ import BreedCard from "./BreedCard";
 const Preview: React.FC = () => {
   const filteredBreeds = useSelector(selectFilteredBreeds());
   const breedsStatus = useSelector(selectStatus());
-  const breedsFilters = useSelector(selectFilters());
+  const areBreedsFiltered = useSelector(selectAreBreedsFiltered());
 
   return (
     <>
-      {breedsFilters.name !== "" ||
-      breedsFilters.categories!.length !== 0 ||
-      breedsFilters.sizes!.length !== 0 ||
-      // lifeSpan's default value is 6
-      breedsFilters.lifeSpan !== 6 ? (
+      {areBreedsFiltered ? (
         <div className="mb-4 flex items-center justify-between gap-4">
           <p>
             Found <b>{filteredBreeds.length}</b> matching results
