@@ -20,7 +20,7 @@ const ClearFiltersButton: React.FC<ClearFiltersButtonProps> = ({
 
   return (
     <Button
-      customClasses={`text-red-600 flex items-center gap-2 px-0 py-0 ${customClasses}`}
+      customClasses={`text-red-600 bg-red-50 rounded-full justify-center flex items-center gap-2 ${customClasses}`}
       onClick={handleClick}
     >
       <TrashIcon className="h-6 w-6" />
