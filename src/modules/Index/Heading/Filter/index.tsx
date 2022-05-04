@@ -1,7 +1,9 @@
 import { Disclosure, Popover } from "@headlessui/react";
 import { AdjustmentsIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
+import { selectAreBreedsFiltered } from "common/redux/breeds";
 import React from "react";
+import { useSelector } from "react-redux";
 
 import Category from "./Filters/Category";
 // @ts-ignore
@@ -25,6 +27,8 @@ const filters = [
 ];
 
 const Filter: React.FC = () => {
+  const areBreedsFiltered = useSelector(selectAreBreedsFiltered());
+
   return (
     <Popover>
       <Popover.Button
@@ -35,7 +39,9 @@ const Filter: React.FC = () => {
         <AdjustmentsIcon className="h-6 w-6" />
       </Popover.Button>
       <Popover.Panel className="absolute inset-x-6 z-[100] mt-6 rounded-lg bg-gray-50 p-6 lg:inset-x-28">
-        <ClearFiltersButton customClasses="md:hidden text-base mb-6 !p-0 rounded-none" />
+        {areBreedsFiltered && (
+          <ClearFiltersButton customClasses="md:hidden text-base mb-6" />
+        )}
         <>
           {filters.map((filter, id) => (
             <div key={filter.title}>
