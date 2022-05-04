@@ -118,4 +118,17 @@ export const selectFilters = () => (state: AppState) => state.breeds.filters;
 
 export const selectStatus = () => (state: AppState) => state.breeds.status;
 
+export const selectAreBreedsFiltered =
+  () =>
+  (state: AppState): boolean => {
+    const breedsFilters = state.breeds.filters;
+
+    return (
+      breedsFilters.name !== "" ||
+      breedsFilters.categories!.length !== 0 ||
+      breedsFilters.sizes!.length !== 0 ||
+      // lifeSpan's default value is 6
+      breedsFilters.lifeSpan !== 6
+    );
+  };
 export default breedsSlice.reducer;
