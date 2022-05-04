@@ -39,9 +39,6 @@ const Filter: React.FC = () => {
         <AdjustmentsIcon className="h-6 w-6" />
       </Popover.Button>
       <Popover.Panel className="absolute inset-x-6 z-[100] mt-6 rounded-lg bg-gray-50 p-6 lg:inset-x-28">
-        {areBreedsFiltered && (
-          <ClearFiltersButton customClasses="md:hidden text-base mb-6" />
-        )}
         <>
           {filters.map((filter, id) => (
             <div key={filter.title}>
@@ -70,6 +67,9 @@ const Filter: React.FC = () => {
             </div>
           ))}
         </>
+        {areBreedsFiltered && (
+          <ClearFiltersButton customClasses="md:hidden text-base mt-6 float-right" />
+        )}
       </Popover.Panel>
     </Popover>
   );
