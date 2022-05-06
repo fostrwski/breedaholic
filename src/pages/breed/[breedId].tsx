@@ -80,6 +80,7 @@ const Breed: NextPage = () => {
                             <span
                               className={`mt-4 ${!seeMore ? "hidden" : ""}`}
                             >
+                              {" "}
                               {data?.breedDescription
                                 .split(" ")
                                 .slice(28)
