@@ -112,7 +112,7 @@ const Breed: NextPage = () => {
                                 .join(" ")}
                             </span>{" "}
                             <button
-                              className="text-gray-400"
+                              className="bg-transparent text-gray-400 hover:text-gray-500 focus-visible:underline"
                               onClick={handleSeeMore}
                             >
                               {!seeMore ? "show more" : "show less"}
@@ -137,7 +137,7 @@ const Breed: NextPage = () => {
             }
           />
           <a
-            className="mt-4 flex items-center gap-2"
+            className="mt-4 flex items-center gap-2 focus-visible:underline focus-visible:outline-none"
             href={data?.breedWikiUrl}
             target="blank"
           >
