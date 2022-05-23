@@ -10,15 +10,21 @@ export default async function handler(
 
   const breed = await wiki({ apiUrl: WIKIPEDIA_URL })
     // @ts-ignore
-    .page(name)
-    .then(async (page) => {
-      return {
-        breedDescription: await page.summary(),
-        // @ts-ignore
-        breedOrigin: await page.info().then((info) => info.country),
-        breedWikiUrl: page.url(),
-      };
-    });
-
+    .search(name + " dog")
+    .then((data) =>
+      wiki({ apiUrl: WIKIPEDIA_URL })
+        .page(data.results[0])
+        .then(async (page) => {
+          return {
+            breedDescription: await page.summary(),
+            // @ts-ignore
+            breedOrigin: await page.info().then((info) => info.country),
+            breedWikiUrl: page.url(),
+          };
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+    );
   res.status(200).json(breed);
 }
