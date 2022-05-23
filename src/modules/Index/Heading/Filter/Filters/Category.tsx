@@ -3,6 +3,7 @@ import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+// @ts-ignore
 import FilterButton from "./FilterButton";
 
 const Category: React.FC = () => {
