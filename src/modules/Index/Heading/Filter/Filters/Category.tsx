@@ -25,7 +25,15 @@ const Category: React.FC = () => {
     }
   };
 
-  const categories = ["All", "Herding", "Working", "Terrier", "Hound", "Toy"];
+  const categories = [
+    "All",
+    "Herding",
+    "Working",
+    "Sporting",
+    "Terrier",
+    "Hound",
+    "Toy",
+  ];
 
   return (
     <div className="flex flex-wrap gap-2 text-sm">
