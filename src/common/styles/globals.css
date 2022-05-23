@@ -45,7 +45,7 @@
   }
 
   button {
-    @apply focus-visible:brightness-90;
+    @apply bg-white focus-visible:brightness-95;
   }
 
   [type="text"],
