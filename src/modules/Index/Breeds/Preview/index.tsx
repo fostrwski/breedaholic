@@ -43,7 +43,7 @@ const Preview: React.FC = () => {
         {breedsStatus === "loading" && <>Loading...</>}
         {breedsStatus === "idle" && filteredBreeds.length === 0 && (
           <p
-            className="text-center text-lg font-semibold"
+            className="text-lg font-semibold"
             data-cy="breeds-not-found-message"
           >
             {/* eslint-disable-next-line react/no-unescaped-entities */}
