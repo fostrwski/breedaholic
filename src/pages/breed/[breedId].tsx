@@ -137,7 +137,7 @@ const Breed: NextPage = () => {
             }
           />
           <a
-            className="mt-4 flex items-center gap-2 focus-visible:underline focus-visible:outline-none"
+            className="mt-4 flex items-center gap-2 focus-visible:text-gray-600 focus-visible:outline-none"
             href={data?.breedWikiUrl}
             target="blank"
           >
