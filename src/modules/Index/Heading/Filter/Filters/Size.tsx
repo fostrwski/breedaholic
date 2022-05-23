@@ -1,7 +1,8 @@
-import Button from "common/components/Button";
 import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import FilterButton from "./FilterButton";
 
 const Size: React.FC = () => {
   const dispatch = useDispatch();
@@ -28,17 +29,14 @@ const Size: React.FC = () => {
   return (
     <div className="flex flex-wrap gap-2 text-sm">
       {sizes.map((size: string) => (
-        <Button
+        <FilterButton
           key={size}
-          customClasses={`text-gray-800 bg-gray-100 ${
-            size === "All" && selectedSizes!.length === 0 ? "bg-gray-200" : ""
-          } ${
-            size !== "All" && selectedSizes!.includes(size) ? "bg-gray-200" : ""
-          }`}
+          filter={size}
+          selectedFilters={selectedSizes}
           onClick={() => toggleSize(size)}
         >
           {size}
-        </Button>
+        </FilterButton>
       ))}
     </div>
   );

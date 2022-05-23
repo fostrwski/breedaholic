@@ -3,6 +3,8 @@ import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import FilterButton from "./FilterButton";
+
 const Category: React.FC = () => {
   const dispatch = useDispatch();
   const breedsFilters = useSelector(selectFilters());
@@ -27,21 +29,14 @@ const Category: React.FC = () => {
   return (
     <div className="flex flex-wrap gap-2 text-sm">
       {categories.map((category: string) => (
-        <Button
+        <FilterButton
           key={category}
-          customClasses={`text-gray-800 bg-gray-100 ${
-            category === "All" && selectedCategories!.length === 0
-              ? "bg-gray-200"
-              : ""
-          } ${
-            category !== "all" && selectedCategories!.includes(category)
-              ? "bg-gray-200"
-              : ""
-          }`}
           onClick={() => toggleCategory(category)}
+          filter={category}
+          selectedFilters={selectedCategories}
         >
           {category}
-        </Button>
+        </FilterButton>
       ))}
     </div>
   );

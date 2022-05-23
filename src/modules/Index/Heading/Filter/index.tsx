@@ -45,7 +45,7 @@ const Filter: React.FC = () => {
               <Disclosure defaultOpen>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="flex w-full items-center justify-between rounded-xl">
+                    <Disclosure.Button className="flex w-full items-center justify-between rounded-xl focus-visible:text-gray-400">
                       <span className="text-xl font-semibold">
                         {filter.title}
                       </span>
