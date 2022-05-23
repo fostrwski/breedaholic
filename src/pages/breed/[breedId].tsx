@@ -1,6 +1,10 @@
 // @ts-nocheck
 
-import { InformationCircleIcon, LinkIcon } from "@heroicons/react/outline";
+import {
+  CheckIcon,
+  InformationCircleIcon,
+  LinkIcon,
+} from "@heroicons/react/outline";
 import Button from "common/components/Button";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
@@ -14,6 +18,7 @@ import { useSelector } from "react-redux";
 
 const Breed: NextPage = () => {
   const [seeMore, setSeeMore] = useState<boolean>(false);
+  const [linkCopied, setLinkCopied] = useState<boolean>(false);
   const router = useRouter();
   const { breedId } = router.query;
 
@@ -23,8 +28,18 @@ const Breed: NextPage = () => {
 
   const { data, error, isLoading } = useFetch(`/api/breed/${breed.name}`);
 
-  const handleClick = () => {
+  const handleSeeMore = () => {
     setSeeMore(!seeMore);
+  };
+
+  const handleCopyLink = async () => {
+    return navigator.clipboard
+      .writeText(window.location.href)
+      .then(async () => {
+        setLinkCopied(true);
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        setLinkCopied(false);
+      });
   };
 
   return (
@@ -46,8 +61,17 @@ const Breed: NextPage = () => {
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
-            <button className="rounded-full p-2">
-              <LinkIcon className="h-6 w-6" />
+            <button
+              className={`rounded-full p-2 ${
+                linkCopied ? "bg-green-50 text-green-700" : ""
+              }`}
+              onClick={handleCopyLink}
+            >
+              {linkCopied ? (
+                <CheckIcon className="h-6 w-6 rounded-full motion-safe:animate-pulse" />
+              ) : (
+                <LinkIcon className="h-6 w-6" />
+              )}
             </button>
           </div>
           <FeatureCard title="Temperament" content={breed.temperament} />
@@ -89,7 +113,7 @@ const Breed: NextPage = () => {
                             </span>{" "}
                             <button
                               className="text-gray-400"
-                              onClick={handleClick}
+                              onClick={handleSeeMore}
                             >
                               {!seeMore ? "show more" : "show less"}
                             </button>
