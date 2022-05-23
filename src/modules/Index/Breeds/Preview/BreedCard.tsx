@@ -20,8 +20,8 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
           className="rounded-lg brightness-[48%]"
         />
         <div className="absolute bottom-4 px-6 text-white">
-          <div className="mb-2 text-xl font-semibold">{breed.name}</div>
-          <div className="text-lg">{breed.temperament}</div>
+          <p className="mb-2 text-xl font-semibold">{breed.name}</p>
+          <p className="text-lg">{breed.temperament}</p>
         </div>
       </a>
     </Link>
