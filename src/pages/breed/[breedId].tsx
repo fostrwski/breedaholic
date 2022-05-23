@@ -125,7 +125,7 @@ const Breed: NextPage = () => {
                       <p className="mt-4 leading-none">
                         <strong className="text-sm">
                           Note: This data is fetched from wikipedia. It may
-                          contain some unverified or incomplete information.
+                          contain unverified or incomplete information.
                         </strong>
                       </p>
                     </>
