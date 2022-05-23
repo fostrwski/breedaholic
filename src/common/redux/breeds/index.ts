@@ -16,6 +16,7 @@ interface Filters {
   sizes?: Array<string>;
   lifeSpan?: number;
   temperament?: Array<string>;
+  count?: number;
 }
 
 interface BreedsState {
@@ -34,6 +35,7 @@ export const initialState: BreedsState = {
     sizes: [],
     lifeSpan: 6,
     temperament: [],
+    count: 0,
   },
   status: "idle",
 };
@@ -74,6 +76,15 @@ const reducers = {
 
       return elementExists;
     });
+
+    (() => {
+      let count: number = 0;
+      if (state.filters.name.length !== 0) count += 1;
+      count += state.filters.categories.length;
+      count += state.filters.sizes.length;
+      if (state.filters.lifeSpan !== 6) count += 1;
+      state.filters.count = count;
+    })();
 
     state.filteredBreeds = filteredBreeds;
   },
@@ -121,14 +132,10 @@ export const selectStatus = () => (state: AppState) => state.breeds.status;
 export const selectAreBreedsFiltered =
   () =>
   (state: AppState): boolean => {
-    const breedsFilters = state.breeds.filters;
-
-    return (
-      breedsFilters.name !== "" ||
-      breedsFilters.categories!.length !== 0 ||
-      breedsFilters.sizes!.length !== 0 ||
-      // lifeSpan's default value is 6
-      breedsFilters.lifeSpan !== 6
-    );
+    return state.breeds.filters.count !== 0;
   };
+
+export const selectFiltersCount = () => (state: AppState) =>
+  state.breeds.filters.count;
+
 export default breedsSlice.reducer;
