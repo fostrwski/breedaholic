@@ -78,7 +78,13 @@ const Breed: NextPage = () => {
           <FeatureCard title="Bred for" content={breed.bred_for} />
           <FeatureCard
             title="Origin"
-            content={isLoading ? "Loading" : data?.breedOrigin}
+            content={
+              isLoading ? (
+                <span className="animate-pulse">Loading</span>
+              ) : (
+                data?.breedOrigin
+              )
+            }
           />
           <FeatureCard title="Average life span" content={breed.life_span} />
           <FeatureCard title="Weight" content={`${breed.weight.metric} kg`} />
@@ -87,7 +93,7 @@ const Breed: NextPage = () => {
             title="Description"
             content={
               isLoading ? (
-                "Loading"
+                <span className="animate-pulse">Loading</span>
               ) : (
                 <>
                   {typeof data?.breedDescription !== "undefined" && (
@@ -96,28 +102,24 @@ const Breed: NextPage = () => {
                         <p>{data?.breedDescription}</p>
                       ) : (
                         <>
-                          <p>
+                          {data?.breedDescription
+                            .split(" ")
+                            .slice(0, 28)
+                            .join(" ")}
+                          {!seeMore ? "..." : ""}
+                          <span className={`mt-4 ${!seeMore ? "hidden" : ""}`}>
+                            {" "}
                             {data?.breedDescription
                               .split(" ")
-                              .slice(0, 28)
+                              .slice(28)
                               .join(" ")}
-                            {!seeMore ? "..." : ""}
-                            <span
-                              className={`mt-4 ${!seeMore ? "hidden" : ""}`}
-                            >
-                              {" "}
-                              {data?.breedDescription
-                                .split(" ")
-                                .slice(28)
-                                .join(" ")}
-                            </span>{" "}
-                            <button
-                              className="bg-transparent text-gray-400 hover:text-gray-500 focus-visible:underline"
-                              onClick={handleSeeMore}
-                            >
-                              {!seeMore ? "show more" : "show less"}
-                            </button>
-                          </p>
+                          </span>{" "}
+                          <button
+                            className="bg-transparent text-gray-400 focus-visible:text-gray-600"
+                            onClick={handleSeeMore}
+                          >
+                            {!seeMore ? "show more" : "show less"}
+                          </button>
                         </>
                       )}
                       <p className="mt-4 leading-none">
