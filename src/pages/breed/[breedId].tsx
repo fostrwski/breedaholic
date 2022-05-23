@@ -30,6 +30,7 @@ const Breed: NextPage = () => {
   return (
     <DefaultLayout>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {/* For styling purpose */}
         <div>
           <Image
             src={breed.image.url}
@@ -45,7 +46,7 @@ const Breed: NextPage = () => {
             <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
               {breed.name}
             </h1>
-            <button>
+            <button className="rounded-full p-2">
               <LinkIcon className="h-6 w-6" />
             </button>
           </div>
@@ -98,7 +99,7 @@ const Breed: NextPage = () => {
                       <p className="mt-4 leading-none">
                         <strong className="text-sm">
                           Note: This data is fetched from wikipedia. It may
-                          contain some unverified information.
+                          contain some unverified or incomplete information.
                         </strong>
                       </p>
                     </>
