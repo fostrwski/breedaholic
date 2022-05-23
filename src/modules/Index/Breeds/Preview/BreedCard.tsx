@@ -11,13 +11,16 @@ interface CardProps {
 const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
   return (
     <Link href={`/breed/${breed.id}`}>
-      <a {...props} className="relative min-h-[280px]">
+      <a
+        {...props}
+        className="relative min-h-[280px] focus-visible:outline-none focus-visible:brightness-[.75]"
+      >
         <Image
           src={breed.image!.url}
           alt={breed.name}
           layout="fill"
           objectFit="cover"
-          className="rounded-lg brightness-[48%]"
+          className="rounded-lg brightness-[.6]"
         />
         <div className="absolute bottom-4 px-6 text-white">
           <p className="mb-2 text-xl font-semibold">{breed.name}</p>
