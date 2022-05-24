@@ -1,4 +1,3 @@
-import Button from "common/components/Button";
 import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,6 +29,7 @@ const Category: React.FC = () => {
     "Herding",
     "Working",
     "Sporting",
+    "Non-Sporting",
     "Terrier",
     "Hound",
     "Toy",
