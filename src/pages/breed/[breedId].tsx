@@ -5,10 +5,10 @@ import {
   InformationCircleIcon,
   LinkIcon,
 } from "@heroicons/react/outline";
-import Button from "common/components/Button";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
 import { selectBreeds } from "common/redux/breeds";
+import getBreedGroupEmoji from "common/utils/getBreedGroupEmoji";
 import FeatureCard from "modules/Breed/FeatureCard";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
@@ -37,6 +37,7 @@ const Breed: NextPage = () => {
       .writeText(window.location.href)
       .then(async () => {
         setLinkCopied(true);
+        // For styling purpose
         await new Promise((resolve) => setTimeout(resolve, 3000));
         setLinkCopied(false);
       });
@@ -45,7 +46,7 @@ const Breed: NextPage = () => {
   return (
     <DefaultLayout>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {/* For styling purpose */}
+        {/* Div is for styling purpose */}
         <div>
           <Image
             src={breed.image.url}
@@ -58,9 +59,14 @@ const Breed: NextPage = () => {
         </div>
         <section className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-2">
-            <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
-              {breed.name}
-            </h1>
+            <div>
+              <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
+                {breed.name}
+              </h1>
+              <p className="font-semibold text-gray-700 md:text-lg">
+                {getBreedGroupEmoji(breed.breed_group)} {breed.breed_group} dog
+              </p>
+            </div>
             <button
               className={`rounded-full p-2 ${
                 linkCopied ? "bg-green-50 text-green-700" : ""

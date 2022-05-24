@@ -1,4 +1,5 @@
 import type { Breed } from "common/types";
+import getBreedGroupEmoji from "common/utils/getBreedGroupEmoji";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,25 +10,6 @@ interface CardProps {
 }
 
 const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
-  const generateEmoji = (breedGroup: string) => {
-    switch (breedGroup) {
-      case "Toy":
-        return "🧸";
-      case "Hound":
-        return "🦆";
-      case "Working":
-        return "💼";
-      case "Herding":
-        return "🐑";
-      case "Sporting":
-        return "🎯";
-      case "Terrier":
-        return "🦊";
-      default:
-        return "🐶";
-    }
-  };
-
   return (
     <Link href={`/breed/${breed.id}`}>
       <a
@@ -43,7 +25,7 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
         />
         {breed.breed_group && (
           <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-green-50/30 p-2 px-4 text-sm font-semibold text-white md:text-base">
-            <span>{generateEmoji(breed.breed_group)}</span>
+            <span>{getBreedGroupEmoji(breed.breed_group)}</span>
             <span>{breed.breed_group} dog</span>
           </div>
         )}
