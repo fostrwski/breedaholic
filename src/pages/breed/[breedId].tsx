@@ -63,9 +63,12 @@ const Breed: NextPage = () => {
               <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
                 {breed.name}
               </h1>
-              <p className="font-semibold text-gray-700 md:text-lg">
-                {getBreedGroupEmoji(breed.breed_group)} {breed.breed_group} dog
-              </p>
+              {typeof breed.breed_group !== "undefined" && (
+                <p className="font-semibold text-gray-700 md:text-lg">
+                  {getBreedGroupEmoji(breed.breed_group)} {breed.breed_group}{" "}
+                  dog
+                </p>
+              )}{" "}
             </div>
             <button
               className={`rounded-full p-2 ${
