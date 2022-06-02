@@ -1,5 +1,5 @@
 ### Breedaholic 🐶
-#### We help you find the dog breed you're looking for!
+### We help you find the dog breed you're looking for!
 
 <hr/>
   
