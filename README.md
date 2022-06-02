@@ -1,5 +1,4 @@
-### Breedaholic 🐶
-### We help you find the dog breed you're looking for!
+### This application helps you find the dog breed you're looking for 🐶
 
 <hr/>
   
