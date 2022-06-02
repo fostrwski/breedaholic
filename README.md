@@ -1,6 +1,6 @@
 <div align="center">
-<h3>Breedaholic 🐶</h4>
-<h4>We help you find the dog breed you're looking for!</h4>
+<h2>Breedaholic 🐶</h4>
+<h3>We help you find the dog breed you're looking for!</h4>
 
 <hr />
 
