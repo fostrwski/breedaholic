@@ -1,4 +1,4 @@
-
+<div align="center">
 <h3>Breedaholic 🐶</h4>
 <h4>We help you find the dog breed you're looking for!</h4>
 
@@ -10,3 +10,4 @@
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+</div>
