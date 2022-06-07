@@ -5,6 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Filter from "./Filter";
 
+const Separator: React.FC = () => {
+  return <div className="h-0.5 w-full hidden md:block rounded-full bg-gray-200 md:w-full" />;
+};
+
 const Heading: React.FC = () => {
   const dispatch = useDispatch();
 
@@ -16,12 +20,16 @@ const Heading: React.FC = () => {
 
   return (
     <div className="text-center">
-      <h1 className="text-xl font-semibold">
-        We help you
-        <span className="font-bold text-green-700"> find the dog breed </span>
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        you're looking for!
-      </h1>
+      <div className="flex items-center justify-between">
+        <Separator />
+        <h1 className="w-full px-6 text-xl font-semibold">
+          We help you
+          <span className="font-bold text-green-700"> find the dog breed </span>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          you're looking for
+        </h1>
+        <Separator />
+      </div>
       <div className="mt-6 flex items-center gap-2">
         <Input
           type="search"
