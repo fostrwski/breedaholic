@@ -4,13 +4,11 @@ import { filterBreeds, initialState } from "common/redux/breeds";
 import React from "react";
 import { useDispatch } from "react-redux";
 
-interface ClearFiltersButtonProps {
+interface ClearAllButtonProps {
   customClasses?: string;
 }
 
-const ClearFiltersButton: React.FC<ClearFiltersButtonProps> = ({
-  customClasses,
-}) => {
+const ClearAllButton: React.FC<ClearAllButtonProps> = ({ customClasses }) => {
   const dispatch = useDispatch();
   const defaultFilters = initialState.filters;
 
@@ -24,9 +22,9 @@ const ClearFiltersButton: React.FC<ClearFiltersButtonProps> = ({
       onClick={handleClick}
     >
       <TrashIcon className="h-6 w-6" />
-      Clear filters
+      Clear all
     </Button>
   );
 };
 
-export default ClearFiltersButton;
+export default ClearAllButton;
