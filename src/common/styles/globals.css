@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-sans tracking-tighter;
+    @apply font-sans tracking-tighter text-gray-800;
   }
 
   [type="text"],
@@ -46,6 +46,10 @@
 
   button {
     @apply bg-white focus-visible:brightness-95;
+  }
+
+  a {
+    @apply rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
   }
 
   [type="text"],
