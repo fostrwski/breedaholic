@@ -77,8 +77,10 @@ const reducers = {
       return elementExists;
     });
 
+    // Set filters count
     (() => {
       let count: number = 0;
+      if (state.filters.name.length !== 0) count += 1
       count += state.filters.categories.length;
       count += state.filters.sizes.length;
       if (state.filters.lifeSpan !== 6) count += 1;

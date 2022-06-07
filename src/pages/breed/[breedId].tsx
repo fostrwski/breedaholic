@@ -74,6 +74,7 @@ const Breed: NextPage = () => {
               className={`rounded-full p-2 ${
                 linkCopied ? "bg-green-50 text-green-700" : ""
               }`}
+              title="Copy url to clipboard"
               onClick={handleCopyLink}
             >
               {linkCopied ? (
@@ -124,7 +125,7 @@ const Breed: NextPage = () => {
                               .join(" ")}
                           </span>{" "}
                           <button
-                            className="bg-transparent text-gray-400 focus-visible:text-gray-600"
+                            className="rounded-lg bg-transparent text-gray-400 focus-visible:ring-2 focus-visible:ring-offset-2"
                             onClick={handleSeeMore}
                           >
                             {!seeMore ? "show more" : "show less"}
@@ -148,7 +149,7 @@ const Breed: NextPage = () => {
             }
           />
           <a
-            className="mt-4 flex items-center gap-2 focus-visible:text-gray-600 focus-visible:outline-none"
+            className="mt-4 flex items-center gap-2"
             href={data?.breedWikiUrl}
             target="blank"
           >
