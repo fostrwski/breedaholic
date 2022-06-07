@@ -1,6 +1,6 @@
 import type { AnyAction, PayloadAction } from "@reduxjs/toolkit";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import type { AppState } from "common/store";
+import type { AppState } from "common/redux/store";
 import type { Breed } from "common/types";
 import { GET_BREEDS_URL } from "common/utils/api";
 import { HYDRATE } from "next-redux-wrapper";
