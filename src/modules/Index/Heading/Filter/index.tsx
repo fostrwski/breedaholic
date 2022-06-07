@@ -10,8 +10,9 @@ import { useSelector } from "react-redux";
 
 import Category from "./Filters/Category";
 // @ts-ignore
-import ClearFiltersButton from "./Filters/ClearFiltersButton";
+import ClearAllButton from "./Filters/ClearAllButton";
 import LifeSpan from "./Filters/LifeSpan";
+import Name from "./Filters/Name";
 import Size from "./Filters/Size";
 
 const filters = [
@@ -49,6 +50,8 @@ const Filter: React.FC = () => {
       </Popover.Button>
       <Popover.Panel className="absolute inset-x-6 z-[100] mt-4 rounded-lg bg-gray-50 p-6 md:inset-x-auto md:right-6 md:w-96 lg:right-28">
         <>
+          <Name />
+
           {filters.map((filter, id) => (
             <div key={filter.title}>
               <Disclosure defaultOpen>
@@ -77,7 +80,7 @@ const Filter: React.FC = () => {
           ))}
         </>
         {areBreedsFiltered && (
-          <ClearFiltersButton customClasses="text-base mt-6 float-right" />
+          <ClearAllButton customClasses="text-base mt-6 float-right" />
         )}
       </Popover.Panel>
     </Popover>
