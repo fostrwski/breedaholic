@@ -9,7 +9,7 @@ const filterByCategories = (
     return categories.includes(breed.breed_group);
   });
 
-  return filteredBreeds
+  return filteredBreeds;
 };
 
-export default filterByCategories
+export default filterByCategories;
