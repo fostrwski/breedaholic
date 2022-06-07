@@ -14,7 +14,7 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
     <Link href={`/breed/${breed.id}`}>
       <a
         {...props}
-        className="relative min-h-[280px] focus-visible:outline-none focus-visible:brightness-[.74]"
+        className="relative min-h-[280px] focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:brightness-[.74]"
       >
         <Image
           src={breed.image!.url}
