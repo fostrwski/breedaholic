@@ -42,7 +42,7 @@ const Filter: React.FC = () => {
         className="relative rounded-lg bg-white p-2"
       >
         {areBreedsFiltered && (
-          <div className="absolute top-0 right-0 h-5 w-5 rounded-full bg-green-50 text-sm font-bold text-green-700">
+          <div className="absolute top-0 right-0 h-5 w-5 rounded-full bg-green-50 text-sm font-bold tracking-tighter text-green-700">
             {breedsFiltersCount}
           </div>
         )}
