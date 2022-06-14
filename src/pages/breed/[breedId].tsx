@@ -58,15 +58,15 @@ const Breed: NextPage = () => {
           />
         </div>
         <section className="flex flex-col gap-4">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-semibold md:text-3xl lg:mb-2">
                 {breed.name}
               </h1>
               {typeof breed.breed_group !== "undefined" && (
-                <p className="font-semibold text-gray-700 md:text-lg">
-                  {getBreedGroupEmoji(breed.breed_group)} {breed.breed_group}{" "}
-                  dog
+                <p className="inline-flex gap-2 font-semibold text-gray-700 md:text-lg">
+                  <span>{getBreedGroupEmoji(breed.breed_group)}</span>
+                  <span>{breed.breed_group} dog</span>
                 </p>
               )}{" "}
             </div>
