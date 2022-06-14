@@ -14,7 +14,12 @@ const FilterButton: React.FC<FilterButtonProps> = ({
   return (
     <Button
       {...props}
-      customClasses={`text-gray-800 ${((filter === "All" && selectedFilters.length === 0) || selectedFilters.includes(filter)) ? "bg-gray-200" : "bg-gray-100" }`}
+      customClasses={`text-gray-800 ${
+        (filter === "All" && selectedFilters.length === 0) ||
+        selectedFilters.includes(filter)
+          ? "bg-gray-200"
+          : "bg-gray-100"
+      }`}
     >
       {filter}
     </Button>

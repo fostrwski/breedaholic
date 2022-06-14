@@ -9,18 +9,16 @@ const Name: React.FC = () => {
 
   return (
     <div className={searchedName.length === 0 ? "hidden" : ""}>
-    <div
-      className="flex items-center gap-4 text-left"
-    >
-      <p className="text-xl font-semibold">Name</p>
-      <span className="flex items-center gap-2 rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-        {searchedName}
-        <XCircleIcon className="h-5 w-5" />
-      </span>
-    </div>
+      <div className="flex items-center gap-4 text-left">
+        <p className="text-xl font-semibold">Name</p>
+        <span className="flex items-center gap-2 rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
+          {searchedName}
+          <XCircleIcon className="h-5 w-5" />
+        </span>
+      </div>
 
       <hr className="my-4 rounded-full" />
-      </div>
+    </div>
   );
 };
 

@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Filter from "./Filter";
 
 const Line: React.FC = () => {
-  return <div className="h-0.5 w-full hidden md:block rounded-full bg-gray-200 md:w-full" />;
+  return (
+    <div className="hidden h-0.5 w-full rounded-full bg-gray-200 md:block md:w-full" />
+  );
 };
 
 const Heading: React.FC = () => {
