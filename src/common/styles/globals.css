@@ -45,7 +45,7 @@
   }
 
   button {
-    @apply bg-white focus-visible:brightness-95;
+    @apply rounded-lg focus-visible:brightness-95;
   }
 
   a {

@@ -38,6 +38,7 @@ const Filter: React.FC = () => {
     <Popover>
       <Popover.Button
         aria-label="Filter breeds"
+        title="Toggle filtering options"
         data-cy="breeds-filter-popover-toggle"
         className="relative rounded-lg bg-white p-2"
       >

@@ -71,8 +71,8 @@ const Breed: NextPage = () => {
               )}{" "}
             </div>
             <button
-              className={`rounded-full p-2 ${
-                linkCopied ? "bg-green-50 text-green-700" : ""
+              className={`rounded-full p-2 focus-visible:bg-gray-50 ${
+                linkCopied ? "bg-green-50 text-green-700 focus-visible:bg-green-50" : ""
               }`}
               title="Copy url to clipboard"
               onClick={handleCopyLink}
@@ -124,6 +124,7 @@ const Breed: NextPage = () => {
                               .slice(28)
                               .join(" ")}
                           </span>{" "}
+                          {/* @todo add text variant to button component  */}
                           <button
                             className="rounded-lg bg-transparent text-gray-400 focus-visible:ring-2 focus-visible:ring-offset-2"
                             onClick={handleSeeMore}
