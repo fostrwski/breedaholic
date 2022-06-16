@@ -1,4 +1,6 @@
+import { XCircleIcon } from "@heroicons/react/outline";
 import {
+  filterBreeds,
   selectAreBreedsFiltered,
   selectFilteredBreeds,
   selectStatus,
@@ -27,7 +29,13 @@ const Preview: React.FC = () => {
       ) : (
         ""
       )}
-      <div className="xs:grid-cols-1 grid gap-6 md:grid-cols-3">
+      <div
+        className={`xs:grid-cols-1 grid gap-6 ${
+          breedsStatus === "idle" && filteredBreeds.length === 0
+            ? "md:grid-cols-1"
+            : "md:grid-cols-3"
+        }`}
+      >
         {filteredBreeds.map((breed: Breed) => {
           return (
             <BreedCard
@@ -42,13 +50,14 @@ const Preview: React.FC = () => {
         })}
         {breedsStatus === "loading" && <>Loading...</>}
         {breedsStatus === "idle" && filteredBreeds.length === 0 && (
-          <p
-            className="text-lg font-semibold"
+          <div
+            className="mx-auto mt-8 flex w-full flex-col items-center justify-center gap-2 text-center text-lg font-semibold text-gray-600 md:mt-12"
             data-cy="breeds-not-found-message"
           >
             {/* eslint-disable-next-line react/no-unescaped-entities */}
-            We couldn't find any breeds :(
-          </p>
+            <XCircleIcon className="h-24 w-24" /> We couldn't find the dog breed
+            you're looking for
+          </div>
         )}
       </div>
     </>
