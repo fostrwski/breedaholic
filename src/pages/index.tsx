@@ -10,7 +10,7 @@ const Index: NextPage = () => {
       <section>
         <Heading />
       </section>
-      <section className="mt-8">
+      <section className="mt-6">
         <Breeds />
       </section>
     </DefaultLayout>
