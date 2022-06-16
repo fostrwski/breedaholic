@@ -19,10 +19,10 @@ const ClearAllButton: React.FC<ClearAllButtonProps> = ({ customClasses }) => {
   return (
     <Button
       title="Clear all filters including name"
-      customClasses={`text-red-600 bg-transparent rounded-lg focus-visible:text-red-800 px-0 py-0 focus-visible:brightness-100 justify-center flex items-center gap-2 ${customClasses}`}
+      customClasses={`text-red-600 bg-transparent focus-visible:text-red-800 px-0 py-0 focus-visible:brightness-100 justify-center flex items-center gap-2 ${customClasses}`}
       onClick={handleClick}
     >
-      <TrashIcon className="h-6 w-6" />
+      <TrashIcon className="h-4 w-4" />
       Clear all
     </Button>
   );

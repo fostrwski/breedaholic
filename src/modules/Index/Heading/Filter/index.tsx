@@ -81,7 +81,7 @@ const Filter: React.FC = () => {
           ))}
         </>
         {areBreedsFiltered && (
-          <ClearAllButton customClasses="text-base mt-6 float-right" />
+          <ClearAllButton customClasses="mt-6 float-right" />
         )}
       </Popover.Panel>
     </Popover>
