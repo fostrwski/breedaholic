@@ -51,7 +51,7 @@ const Preview: React.FC = () => {
         {breedsStatus === "loading" && <>Loading...</>}
         {breedsStatus === "idle" && filteredBreeds.length === 0 && (
           <div
-            className="mx-auto mt-8 flex w-full flex-col items-center justify-center gap-2 text-center text-lg font-semibold text-gray-600 md:mt-12"
+            className="mx-auto mt-8 flex w-full flex-col items-center justify-center gap-2 text-center text-lg font-semibold text-gray-400 md:mt-12"
             data-cy="breeds-not-found-message"
           >
             {/* eslint-disable-next-line react/no-unescaped-entities */}
