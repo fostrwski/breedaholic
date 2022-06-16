@@ -1,11 +1,16 @@
 import { XCircleIcon } from "@heroicons/react/solid";
-import { selectFilters } from "common/redux/breeds";
+import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Name: React.FC = () => {
   const breedsFilters = useSelector(selectFilters());
   const searchedName = breedsFilters.name!;
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    dispatch(filterBreeds({name: ""}))
+  }
 
   return (
     <div className={searchedName.length === 0 ? "hidden" : ""}>
@@ -13,7 +18,13 @@ const Name: React.FC = () => {
         <p className="text-xl font-semibold">Name</p>
         <span className="flex items-center gap-2 rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
           {searchedName}
-          <XCircleIcon className="h-5 w-5" />
+          <button
+            title="Clear name"
+            className="bg-transparent hover:text-red-800 focus-visible:text-red-800"
+            onClick={handleClick}
+          >
+            <XCircleIcon className="h-6 w-6" />
+          </button>
         </span>
       </div>
 
