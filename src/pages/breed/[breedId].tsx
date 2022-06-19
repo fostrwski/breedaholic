@@ -64,7 +64,7 @@ const Breed: NextPage = () => {
                 {breed.name}
               </h1>
               {typeof breed.breed_group !== "undefined" && (
-                <p className="inline-flex gap-2 font-semibold text-gray-700 md:text-lg">
+                <p className="inline-flex gap-2 font-semibold text-gray-600 md:text-lg">
                   <span>{getBreedGroupEmoji(breed.breed_group)}</span>
                   <span>{breed.breed_group} dog</span>
                 </p>
@@ -72,7 +72,9 @@ const Breed: NextPage = () => {
             </div>
             <button
               className={`rounded-full p-2 focus-visible:bg-gray-50 ${
-                linkCopied ? "bg-green-50 text-green-700 focus-visible:bg-green-50" : ""
+                linkCopied
+                  ? "bg-green-50 text-green-700 focus-visible:bg-green-50"
+                  : ""
               }`}
               title="Copy url to clipboard"
               onClick={handleCopyLink}
