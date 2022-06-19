@@ -90,7 +90,7 @@ const Breed: NextPage = () => {
             title="Origin"
             content={
               isLoading ? (
-                <span className="animate-pulse">Loading</span>
+                <span className="motion-safe:animate-pulse">Loading</span>
               ) : (
                 data?.breedOrigin
               )
@@ -103,7 +103,7 @@ const Breed: NextPage = () => {
             title="Description"
             content={
               isLoading ? (
-                <span className="animate-pulse">Loading</span>
+                <span className="motion-safe:animate-pulse">Loading</span>
               ) : (
                 <>
                   {typeof data?.breedDescription !== "undefined" && (

@@ -2,7 +2,7 @@ import type { Breed } from "common/types";
 import getBreedGroupEmoji from "common/utils/getBreedGroupEmoji";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 interface CardProps {
   breed: Breed;
@@ -10,6 +10,12 @@ interface CardProps {
 }
 
 const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
+  const [imageLoading, setImageLoading] = useState<boolean>(true);
+
+  const handleLoad = () => {
+    setImageLoading(false);
+  };
+
   return (
     <Link href={`/breed/${breed.id}`}>
       <a
@@ -21,7 +27,10 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
           alt={breed.name}
           layout="fill"
           objectFit="cover"
-          className="rounded-lg bg-green-100 brightness-[.54]"
+          onLoad={handleLoad}
+          className={`rounded-lg bg-green-100 brightness-[.54] ${
+            imageLoading ? "motion-safe:animate-pulse" : ""
+          }`}
         />
         {breed.breed_group && (
           <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-green-50/30 p-2 px-4 text-sm font-semibold text-white md:text-base">
