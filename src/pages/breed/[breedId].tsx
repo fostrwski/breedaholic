@@ -5,6 +5,7 @@ import {
   InformationCircleIcon,
   LinkIcon,
 } from "@heroicons/react/outline";
+import SEO from "common/components/SEO";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
 import { selectBreeds } from "common/redux/breeds";
@@ -15,7 +16,6 @@ import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import SEO from "common/components/SEO";
 
 const Breed: NextPage = () => {
   const [seeMore, setSeeMore] = useState<boolean>(false);
