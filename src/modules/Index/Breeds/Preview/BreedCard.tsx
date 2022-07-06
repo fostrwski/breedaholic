@@ -28,9 +28,8 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
           layout="fill"
           objectFit="cover"
           onLoad={handleLoad}
-          className={`rounded-lg bg-green-100 brightness-[.54] ${
-            imageLoading ? "motion-safe:animate-pulse" : ""
-          }`}
+          className={`rounded-lg bg-green-100 brightness-[.54] ${imageLoading ? "motion-safe:animate-breedCardImageLoading" : ""
+            }`}
         />
         {breed.breed_group && (
           <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-green-50/30 p-2 px-4 text-sm font-semibold text-white md:text-base">
