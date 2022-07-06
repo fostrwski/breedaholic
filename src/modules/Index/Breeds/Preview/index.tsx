@@ -1,6 +1,5 @@
 import { XCircleIcon } from "@heroicons/react/outline";
 import {
-  filterBreeds,
   selectAreBreedsFiltered,
   selectFilteredBreeds,
   selectStatus,
@@ -30,11 +29,10 @@ const Preview: React.FC = () => {
         ""
       )}
       <div
-        className={`xs:grid-cols-1 grid gap-6 ${
-          breedsStatus === "idle" && filteredBreeds.length === 0
-            ? "md:grid-cols-1"
-            : "md:grid-cols-3"
-        }`}
+        className={`xs:grid-cols-1 grid gap-6 ${breedsStatus === "idle" && filteredBreeds.length === 0
+          ? "md:grid-cols-1"
+          : "md:grid-cols-3"
+          }`}
       >
         {filteredBreeds.map((breed: Breed) => {
           return (
