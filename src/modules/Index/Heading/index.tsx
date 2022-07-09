@@ -23,14 +23,12 @@ const Heading: React.FC = () => {
   return (
     <div className="text-center">
       <div className="flex items-center justify-between">
-        <Line />
         <h1 className="w-full px-6 text-xl font-semibold">
           We help you
           <span className="font-bold text-green-700"> find the dog breed </span>
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           you're looking for!
         </h1>
-        <Line />
       </div>
       <div className="mt-6 flex items-center gap-2">
         <Input
