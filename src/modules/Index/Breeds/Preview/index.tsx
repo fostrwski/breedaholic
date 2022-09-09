@@ -29,10 +29,11 @@ const Preview: React.FC = () => {
         ""
       )}
       <div
-        className={`xs:grid-cols-1 grid gap-6 ${breedsStatus === "idle" && filteredBreeds.length === 0
-          ? "md:grid-cols-1"
-          : "md:grid-cols-3"
-          }`}
+        className={`xs:grid-cols-1 grid gap-6 ${
+          breedsStatus === "idle" && filteredBreeds.length === 0
+            ? "md:grid-cols-1"
+            : "md:grid-cols-3"
+        }`}
       >
         {filteredBreeds.map((breed: Breed) => {
           return (
@@ -54,6 +55,7 @@ const Preview: React.FC = () => {
           >
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <XCircleIcon className="h-24 w-24" /> We couldn't find the dog breed
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             you're looking for
           </div>
         )}
