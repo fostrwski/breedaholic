@@ -30,11 +30,11 @@ const Heading: React.FC = () => {
           you're looking for!
         </h1>
       </div>
-      <div className="mt-6 flex items-center gap-2">
+      <div className="mt-6 flex items-center justify-center gap-2 md:mt-10">
         <Input
           type="search"
           placeholder="Search breed"
-          customClasses="text-lg placeholder:text-lg"
+          customClasses="text-lg placeholder:text-lg md:max-w-xl"
           onChange={handleChange}
           value={breedsFilters.name}
           data-cy="breeds-search-by-name"
