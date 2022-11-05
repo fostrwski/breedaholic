@@ -25,3 +25,5 @@ describe("Index page", () => {
     cy.get("[data-cy=breeds-not-found-message]").should("exist");
   });
 });
+
+export {};
