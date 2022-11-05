@@ -1,4 +1,4 @@
-import { XCircleIcon } from "@heroicons/react/solid";
+import { XCircleIcon } from "@heroicons/react/24/solid";
 import { filterBreeds, selectFilters } from "common/redux/breeds";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";

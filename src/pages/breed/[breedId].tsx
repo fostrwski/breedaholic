@@ -4,7 +4,7 @@ import {
   CheckIcon,
   InformationCircleIcon,
   LinkIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 import SEO from "common/components/SEO";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";

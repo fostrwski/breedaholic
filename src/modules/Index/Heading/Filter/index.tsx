@@ -1,6 +1,6 @@
 import { Disclosure, Popover } from "@headlessui/react";
-import { AdjustmentsIcon } from "@heroicons/react/outline";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
+import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import {
   selectAreBreedsFiltered,
   selectFiltersCount,
@@ -47,7 +47,7 @@ const Filter: React.FC = () => {
             {breedsFiltersCount}
           </div>
         )}
-        <AdjustmentsIcon className="h-6 w-6" />
+        <AdjustmentsHorizontalIcon className="h-6 w-6" />
       </Popover.Button>
       <Popover.Panel className="absolute inset-x-6 z-[100] mt-4 rounded-lg bg-gray-50 p-6 md:inset-x-auto md:right-6 md:w-96 lg:right-28">
         <>
