@@ -1,7 +1,7 @@
 import Container from "common/components/Container";
+import NextImage from "next/image";
 import Link from "next/link";
 import React from "react";
-import NextImage from "next/image";
 
 const NavBar: React.FC = () => {
   return (

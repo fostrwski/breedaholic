@@ -6,11 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 const Name: React.FC = () => {
   const breedsFilters = useSelector(selectFilters());
   const searchedName = breedsFilters.name!;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(filterBreeds({name: ""}))
-  }
+    dispatch(filterBreeds({ name: "" }));
+  };
 
   return (
     <div className={searchedName.length === 0 ? "hidden" : ""}>

@@ -46,7 +46,10 @@ const Breed: NextPage = () => {
 
   return (
     <>
-      <SEO title={breed.name} description={`Learn characteristics and facts about ${breed.name}`} />
+      <SEO
+        title={breed.name}
+        description={`Learn characteristics and facts about ${breed.name}`}
+      />
 
       <DefaultLayout>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -76,10 +79,11 @@ const Breed: NextPage = () => {
                 )}{" "}
               </div>
               <button
-                className={`rounded-full p-2 focus-visible:bg-gray-50 ${linkCopied
-                  ? "bg-green-50 text-green-700 focus-visible:bg-green-50"
-                  : ""
-                  }`}
+                className={`rounded-full p-2 focus-visible:bg-gray-50 ${
+                  linkCopied
+                    ? "bg-green-50 text-green-700 focus-visible:bg-green-50"
+                    : ""
+                }`}
                 title="Copy url to clipboard"
                 onClick={handleCopyLink}
               >
@@ -123,7 +127,9 @@ const Breed: NextPage = () => {
                               .slice(0, 28)
                               .join(" ")}
                             {!seeMore ? "..." : ""}
-                            <span className={`mt-4 ${!seeMore ? "hidden" : ""}`}>
+                            <span
+                              className={`mt-4 ${!seeMore ? "hidden" : ""}`}
+                            >
                               {" "}
                               {data?.breedDescription
                                 .split(" ")
@@ -166,7 +172,6 @@ const Breed: NextPage = () => {
           </section>
         </div>
       </DefaultLayout>
-
     </>
   );
 };
