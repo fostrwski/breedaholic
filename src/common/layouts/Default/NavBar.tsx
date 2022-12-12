@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
       <Container customClasses="py-6 text-center flex gap-2 sm:gap-0 items-baseline">
         <Link href="/">
           <a className="flex-1 text-4xl font-bold">
-            Breeda<span className="text-green-700">holic</span> 🐶
+            <span className="text-green-700">Breed</span>aholic 🐶
           </a>
         </Link>
 
