@@ -147,7 +147,7 @@ const Breed: NextPage = () => {
                         )}
                         <p className="mt-4 leading-none">
                           <strong className="text-sm">
-                            Note: This data is fetched from wikipedia. It may
+                            <span class="uppercase mr-1 px-2.5 py-0.5 text-xs bg-gray-200 text-gray-600 rounded-full inline-block">Note</span>This data is fetched from wikipedia. It may
                             contain unverified or incomplete information.
                           </strong>
                         </p>
