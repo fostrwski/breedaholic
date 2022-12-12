@@ -1,23 +1,21 @@
 import Input from "common/components/Input";
 import { filterBreeds, selectFilters } from "common/redux/breeds";
-import React from "react";
+import React, { useTransition } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Filter from "./Filter";
-
-const Line: React.FC = () => {
-  return (
-    <div className="hidden h-0.5 w-full rounded-full bg-gray-200 md:block md:w-full" />
-  );
-};
 
 const Heading: React.FC = () => {
   const dispatch = useDispatch();
 
   const breedsFilters = useSelector(selectFilters());
 
+  const [_, startTransition] = useTransition();
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    dispatch(filterBreeds({ name: event.target.value }));
+    startTransition(() => {
+      dispatch(filterBreeds({ name: event.target.value }));
+    });
   };
 
   return (
