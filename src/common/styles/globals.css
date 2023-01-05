@@ -23,7 +23,7 @@
   textarea,
   select,
   button {
-    @apply border-none shadow-xl shadow-gray-100 focus:outline-none focus:ring-0 focus-visible:brightness-[99%];
+    @apply border-none focus:outline-none focus:ring-0 focus-visible:brightness-[99%];
   }
 
   button {
