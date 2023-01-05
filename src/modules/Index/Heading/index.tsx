@@ -19,7 +19,7 @@ const Heading: React.FC = () => {
   };
 
   return (
-    <div className="text-center">
+    <div className="relative text-center">
       <div className="flex items-center justify-between">
         <h1 className="w-full px-6 text-xl font-semibold">
           We help you
@@ -40,6 +40,18 @@ const Heading: React.FC = () => {
 
         <Filter />
       </div>
+
+      <svg
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+        className="absolute -top-12 lg:-top-36 z-[-10] rotate-6"
+      >
+        <path
+          className="fill-green-700 opacity-5"
+          d="M45.8,-74.6C58.7,-71.8,68.2,-58.3,68.9,-44.1C69.6,-29.9,61.4,-15,61.4,0C61.4,15,69.6,30,66.2,39.4C62.8,48.8,47.7,52.6,34.7,59.3C21.7,66,10.9,75.6,-1.5,78.3C-13.9,81,-27.9,76.7,-40.2,69.6C-52.5,62.5,-63.2,52.6,-71.1,40.5C-79,28.5,-84.1,14.2,-82.7,0.8C-81.4,-12.7,-73.7,-25.4,-66.9,-39.3C-60.1,-53.2,-54.1,-68.4,-43.1,-72.3C-32.1,-76.2,-16.1,-68.9,0.2,-69.2C16.4,-69.5,32.8,-77.4,45.8,-74.6Z"
+          transform="translate(100 100)"
+        />
+      </svg>
     </div>
   );
 };
