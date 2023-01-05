@@ -10,13 +10,13 @@ interface Props {
 
 const DefaultLayout: React.FC<Props> = ({ children }) => {
   return (
-    <>
+    <div className="overflow-hidden">
       <NavBar />
       <Container>
         <main className="min-h-screen">{children}</main>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 };
 
