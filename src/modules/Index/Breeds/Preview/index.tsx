@@ -54,7 +54,7 @@ const Preview: React.FC = () => {
             data-cy="breeds-not-found-message"
           >
             {/* eslint-disable-next-line react/no-unescaped-entities */}
-            <XCircleIcon className="h-24 w-24" /> We couldn't find the dog breed
+            <XCircleIcon className="h-24 w-24" /> We couldn't find the dog breed{" "}
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             you're looking for
           </div>
