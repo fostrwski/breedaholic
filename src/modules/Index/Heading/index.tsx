@@ -32,7 +32,7 @@ const Heading: React.FC = () => {
         <Input
           type="search"
           placeholder="Search breed"
-          customClasses="text-lg placeholder:text-lg md:max-w-xl"
+          customClasses="text-lg md:text-xl placeholder:text-lg md:placeholder:text-xl md:max-w-xl md:h-16"
           onChange={handleChange}
           value={breedsFilters.name}
           data-cy="breeds-search-by-name"
