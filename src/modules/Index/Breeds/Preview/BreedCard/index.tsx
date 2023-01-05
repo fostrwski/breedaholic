@@ -11,21 +11,29 @@ interface CardProps {
 }
 
 const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
+
+  const handleOnLoadingComplete = () => {
+    setIsImageLoaded(true);
+  };
 
   return (
     <>
       <Link href={`/breed/${breed.id}`}>
         <a
           {...props}
-          className="relative min-h-[280px] focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:brightness-[.74]"
+          className={`relative min-h-[280px] bg-green-900/50 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:brightness-75 ${
+            !isImageLoaded ? "brightness-5" : ""
+          }`}
         >
-            <Image
-              src={breed.image!.url}
-              alt={breed.name}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg brightness-[.54]"
-            />
+          <Image
+            src={breed.image!.url}
+            alt={breed.name}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg brightness-[.54]"
+            onLoadingComplete={handleOnLoadingComplete}
+          />
           {breed.breed_group && (
             <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-green-50/30 p-2 px-4 text-sm font-semibold text-white md:text-base">
               <span>{getBreedGroupEmoji(breed.breed_group)}</span>
