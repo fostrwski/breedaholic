@@ -23,29 +23,11 @@
   textarea,
   select,
   button {
-    @apply border-none focus:outline-none focus:ring-0;
-  }
-
-  [type="text"],
-  [type="email"],
-  [type="url"],
-  [type="password"],
-  [type="number"],
-  [type="date"],
-  [type="datetime-local"],
-  [type="month"],
-  [type="search"],
-  [type="tel"],
-  [type="time"],
-  [type="week"],
-  [multiple],
-  textarea,
-  select {
-    @apply focus-visible:brightness-95;
+    @apply border-none shadow-xl shadow-gray-100 focus:outline-none focus:ring-0 focus-visible:brightness-[99%];
   }
 
   button {
-    @apply rounded-lg focus-visible:brightness-95;
+    @apply rounded-lg;
   }
 
   a {
@@ -66,6 +48,6 @@
   [type="week"],
   [multiple],
   textarea {
-    @apply w-full rounded-lg bg-gray-50 px-6 py-2;
+    @apply w-full rounded-lg px-6 py-2;
   }
 }
