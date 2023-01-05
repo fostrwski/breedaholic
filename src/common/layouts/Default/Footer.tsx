@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-12 rounded-t-xl bg-gray-50">
+    <footer className="mt-12 rounded-t-xl bg-white shadow-xl shadow-gray-100">
       <Container customClasses="leading-4 pt-12 pb-24 md:pb-12 flex justify-center flex-col md:flex-row items-center gap-2 lg:text-lg font-semibold text-gray-500">
         Designed & created by
         <a
