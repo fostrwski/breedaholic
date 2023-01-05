@@ -49,7 +49,7 @@ const Filter: React.FC = () => {
         )}
         <AdjustmentsHorizontalIcon className="h-6 w-6" />
       </Popover.Button>
-      <Popover.Panel className="absolute inset-x-6 z-[100] mt-4 rounded-lg bg-white p-6 outline outline-2 outline-gray-100 md:inset-x-auto md:right-6 md:w-96 lg:right-28">
+      <Popover.Panel className="absolute inset-x-6 z-[100] mt-4 rounded-lg bg-white p-6 shadow-2xl shadow-gray-400 md:inset-x-auto md:right-6 md:w-96 lg:right-28">
         <>
           <Name />
 
