@@ -18,8 +18,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 const Breed: NextPage = () => {
-  const [seeMore, setSeeMore] = useState<boolean>(false);
-  const [linkCopied, setLinkCopied] = useState<boolean>(false);
+  const [isSeeMore, setIsSeeMore] = useState<boolean>(false);
+  const [isLinkCopied, setIsLinkCopied] = useState<boolean>(false);
   const router = useRouter();
   const { breedId } = router.query;
 
@@ -30,17 +30,17 @@ const Breed: NextPage = () => {
   const { data, error, isLoading } = useFetch(`/api/breed/${breed.name}`);
 
   const handleSeeMore = () => {
-    setSeeMore(!seeMore);
+    setIsSeeMore(!isSeeMore);
   };
 
   const handleCopyLink = async () => {
     return navigator.clipboard
       .writeText(window.location.href)
       .then(async () => {
-        setLinkCopied(true);
+        setIsLinkCopied(true);
         // For styling purpose
         await new Promise((resolve) => setTimeout(resolve, 3000));
-        setLinkCopied(false);
+        setIsLinkCopied(false);
       });
   };
 
@@ -80,14 +80,14 @@ const Breed: NextPage = () => {
               </div>
               <button
                 className={`rounded-full p-2 focus-visible:bg-gray-50 ${
-                  linkCopied
+                  isLinkCopied
                     ? "bg-green-50 text-green-700 focus-visible:bg-green-50"
                     : ""
                 }`}
                 title="Copy url to clipboard"
                 onClick={handleCopyLink}
               >
-                {linkCopied ? (
+                {isLinkCopied ? (
                   <CheckIcon className="h-6 w-6 rounded-full motion-safe:animate-pulse" />
                 ) : (
                   <LinkIcon className="h-6 w-6" />
@@ -126,9 +126,9 @@ const Breed: NextPage = () => {
                               .split(" ")
                               .slice(0, 28)
                               .join(" ")}
-                            {!seeMore ? "..." : ""}
+                            {!isSeeMore ? "..." : ""}
                             <span
-                              className={`mt-4 ${!seeMore ? "hidden" : ""}`}
+                              className={`mt-4 ${!isSeeMore ? "hidden" : ""}`}
                             >
                               {" "}
                               {data?.breedDescription
@@ -141,7 +141,7 @@ const Breed: NextPage = () => {
                               className="rounded-lg bg-transparent text-gray-400 focus-visible:ring-2 focus-visible:ring-offset-2"
                               onClick={handleSeeMore}
                             >
-                              {!seeMore ? "show more" : "show less"}
+                              {!isSeeMore ? "show more" : "show less"}
                             </button>
                           </>
                         )}
