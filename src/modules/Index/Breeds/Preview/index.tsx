@@ -14,11 +14,11 @@ import BreedCard from "./BreedCard";
 const Preview: React.FC = () => {
   const filteredBreeds = useSelector(selectFilteredBreeds());
   const breedsStatus = useSelector(selectStatus());
-  const areBreedsFiltered = useSelector(selectAreBreedsFiltered());
+  const isBreedsFiltered = useSelector(selectAreBreedsFiltered());
 
   return (
     <>
-      {areBreedsFiltered ? (
+      {isBreedsFiltered ? (
         <div className="mb-4 flex items-center justify-between gap-4">
           <p>
             Found <b>{filteredBreeds.length}</b> matching results
