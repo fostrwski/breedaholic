@@ -32,7 +32,7 @@ const Heading: React.FC = () => {
         <Input
           type="search"
           placeholder="Search breed"
-          customClasses="text-lg md:text-xl placeholder:text-lg md:placeholder:text-xl md:max-w-xl md:h-16"
+          customClasses="text-lg md:text-xl placeholder:text-lg md:placeholder:text-xl md:max-w-xl md:h-16 shadow-xl shadow-gray-100 "
           onChange={handleChange}
           value={breedsFilters.name}
           data-cy="breeds-search-by-name"
@@ -44,7 +44,7 @@ const Heading: React.FC = () => {
       <svg
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute -top-12 lg:-top-36 z-[-10] rotate-6"
+        className="absolute -top-12 z-[-10] rotate-6 lg:-top-36"
       >
         <path
           className="fill-green-700 opacity-5"

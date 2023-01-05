@@ -40,7 +40,7 @@ const Filter: React.FC = () => {
         aria-label="Filter breeds"
         title="Toggle filtering options menu"
         data-cy="breeds-filter-popover-toggle"
-        className="relative rounded-lg bg-white p-2"
+        className="relative rounded-lg bg-white p-2 shadow-xl shadow-gray-100 "
       >
         {isBreedsFiltered && (
           <div className="absolute top-0 right-0 h-5 w-5 rounded-full bg-green-50 text-sm font-bold tracking-tighter text-green-700">
@@ -49,7 +49,7 @@ const Filter: React.FC = () => {
         )}
         <AdjustmentsHorizontalIcon className="h-6 w-6" />
       </Popover.Button>
-      <Popover.Panel className="absolute inset-x-6 z-[100] mt-4 rounded-lg bg-white p-6 md:inset-x-auto md:right-6 md:w-96 lg:right-28">
+      <Popover.Panel className="absolute inset-x-6 z-[100] mt-4 rounded-lg bg-white p-6 outline outline-2 outline-gray-100 md:inset-x-auto md:right-6 md:w-96 lg:right-28">
         <>
           <Name />
 
