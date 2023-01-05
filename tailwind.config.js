@@ -14,15 +14,16 @@ module.exports = {
         sans: ["Noto Sans", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
-        breedCardImageLoading: {
+        breedCardSkeleton: {
           "50%": {
-            opacity: "0.90"
-          }
-        }
+            opacity: "0.90",
+          },
+        },
       },
       animation: {
-        breedCardImageLoading: "breedCardImageLoading 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
-      }
+        breedCardSkeleton:
+          "breedCardSkeleton 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
     },
   },
 };
