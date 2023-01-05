@@ -31,7 +31,7 @@ const filters = [
 ];
 
 const Filter: React.FC = () => {
-  const areBreedsFiltered = useSelector(selectAreBreedsFiltered());
+  const isBreedsFiltered = useSelector(selectAreBreedsFiltered());
   const breedsFiltersCount = useSelector(selectFiltersCount());
 
   return (
@@ -42,7 +42,7 @@ const Filter: React.FC = () => {
         data-cy="breeds-filter-popover-toggle"
         className="relative rounded-lg bg-white p-2"
       >
-        {areBreedsFiltered && (
+        {isBreedsFiltered && (
           <div className="absolute top-0 right-0 h-5 w-5 rounded-full bg-green-50 text-sm font-bold tracking-tighter text-green-700">
             {breedsFiltersCount}
           </div>
@@ -80,7 +80,7 @@ const Filter: React.FC = () => {
             </div>
           ))}
         </>
-        {areBreedsFiltered && (
+        {isBreedsFiltered && (
           <ClearAllButton customClasses="mt-6 float-right" />
         )}
       </Popover.Panel>
