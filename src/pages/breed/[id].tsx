@@ -21,13 +21,13 @@ const Breed: NextPage = () => {
   const [isSeeMore, setIsSeeMore] = useState<boolean>(false);
   const [isLinkCopied, setIsLinkCopied] = useState<boolean>(false);
   const router = useRouter();
-  const { breedId } = router.query;
+  const { id } = router.query;
 
   const breeds = useSelector(selectBreeds());
 
-  const breed = breeds.find((breed) => breed.id === parseInt(breedId));
+  const breed = breeds.find((breed) => breed.id === parseInt(id));
 
-  const { data, error, isLoading } = useFetch(`/api/breed/${breed.name}`);
+  const { data, isLoading } = useFetch(`/api/breed/${breed.name}`);
 
   const handleSeeMore = () => {
     setIsSeeMore(!isSeeMore);
@@ -61,7 +61,6 @@ const Breed: NextPage = () => {
               width={breed.image.width}
               height={breed.image.height}
               layout="responsive"
-              className="rounded-lg"
               priority
             />
           </div>
@@ -147,8 +146,11 @@ const Breed: NextPage = () => {
                         )}
                         <p className="mt-4 leading-none">
                           <strong className="text-sm">
-                            <span class="uppercase mr-1 px-2.5 py-0.5 text-xs bg-gray-200 text-gray-600 rounded-full inline-block">Note</span>This data is fetched from wikipedia. It may
-                            contain unverified or incomplete information.
+                            <span class="mr-1 inline-block rounded-full bg-gray-200 px-2.5 py-0.5 text-xs uppercase text-gray-600">
+                              Note
+                            </span>
+                            This data is fetched from wikipedia. It may contain
+                            unverified or incomplete information.
                           </strong>
                         </p>
                       </>
