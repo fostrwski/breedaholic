@@ -24,7 +24,7 @@
     "wikijs": "^6.4.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.25",
+    "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.13",
     "cypress": "^12.5.1",
     "eslint": "^8.34.0",
