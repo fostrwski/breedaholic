@@ -61,6 +61,7 @@ const Breed: NextPage = () => {
               width={breed.image.width}
               height={breed.image.height}
               layout="responsive"
+              className="rounded-lg"
               priority
             />
           </div>
