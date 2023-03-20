@@ -9,7 +9,7 @@ const Index: NextPage = () => {
   return (
     <>
       <SEO
-        title="Strona główna"
+        title="Home"
         description="Breedaholic is a web application that helps you find the dog breed you're looking for!"
       />
 
