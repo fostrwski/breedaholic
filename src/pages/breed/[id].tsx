@@ -169,7 +169,7 @@ const Breed: NextPage = () => {
               href={data?.breedWikiUrl}
               target="blank"
             >
-              <InformationCircleIcon className="h-6 w-6" />
+              <InformationCircleIcon className="h-5 w-5" />
               Click here for more information
             </a>
           </section>
