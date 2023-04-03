@@ -88,9 +88,9 @@ const Breed: NextPage = () => {
                 onClick={handleCopyLink}
               >
                 {isLinkCopied ? (
-                  <CheckIcon className="h-6 w-6 rounded-full motion-safe:animate-pulse" />
+                  <CheckIcon className="h-6 w-6 rounded-full stroke-2 motion-safe:animate-pulse" />
                 ) : (
-                  <LinkIcon className="h-6 w-6" />
+                  <LinkIcon className="h-6 w-6 stroke-2" />
                 )}
               </button>
             </div>
@@ -169,7 +169,7 @@ const Breed: NextPage = () => {
               href={data?.breedWikiUrl}
               target="blank"
             >
-              <InformationCircleIcon className="h-6 w-6" />
+              <InformationCircleIcon className="h-5 w-5" />
               Click here for more information
             </a>
           </section>
