@@ -1,11 +1,11 @@
 import { XCircleIcon } from "@heroicons/react/24/outline";
+import ClearAllButton from "common/components/ClearAllButton";
 import {
   selectAreBreedsFiltered,
   selectFilteredBreeds,
   selectStatus,
 } from "common/redux/breeds";
 import type { Breed } from "common/types";
-import ClearAllButton from "modules/Index/Heading/Filter/Filters/ClearAllButton";
 import React from "react";
 import { useSelector } from "react-redux";
 

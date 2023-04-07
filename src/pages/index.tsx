@@ -1,7 +1,7 @@
 import SEO from "common/components/SEO";
 import DefaultLayout from "common/layouts/Default";
-import Breeds from "modules/Index/Breeds";
-import Heading from "modules/Index/Heading";
+import Breeds from "modules/Home/Breeds";
+import Heading from "modules/Home/Heading";
 import type { NextPage } from "next";
 import React from "react";
 

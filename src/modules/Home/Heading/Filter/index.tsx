@@ -1,6 +1,8 @@
 import { Disclosure, Popover } from "@headlessui/react";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
+// @ts-ignore
+import ClearAllButton from "common/components/ClearAllButton";
 import {
   selectAreBreedsFiltered,
   selectFiltersCount,
@@ -9,8 +11,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Category from "./Filters/Category";
-// @ts-ignore
-import ClearAllButton from "./Filters/ClearAllButton";
 import LifeSpan from "./Filters/LifeSpan";
 import Name from "./Filters/Name";
 import Size from "./Filters/Size";
