@@ -33,15 +33,13 @@ const Breed: NextPage = () => {
     setIsSeeMore(!isSeeMore);
   };
 
-  const handleCopyLink = async () => {
-    return navigator.clipboard
-      .writeText(window.location.href)
-      .then(async () => {
-        setIsLinkCopied(true);
-        // For styling purpose
-        await new Promise((resolve) => setTimeout(resolve, 3000));
-        setIsLinkCopied(false);
-      });
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href).then(async () => {
+      setIsLinkCopied(true);
+      // For styling purpose
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      setIsLinkCopied(false);
+    });
   };
 
   return (
