@@ -1,3 +1,5 @@
+![Home - desktop and mobile view](https://github.com/franekostrowski/breedaholic/blob/main/screenshots/home-desktop-and-mobile-view.png)
+
 # `Breedaholic 🐶`
 
 This web application helps you find the dog breed you're looking for! 
