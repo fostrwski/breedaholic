@@ -6,7 +6,7 @@ This web application helps you find the dog breed you're looking for!
 
 🔴 Live application: https://breedaholic.netlify.app
 
-## Functionalities
+## Features
 
 - Display dog breeds fetched from The Dog Api
 - Search breeds
