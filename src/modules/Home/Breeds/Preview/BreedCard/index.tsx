@@ -26,7 +26,7 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
           }`}
         >
           <Image
-            src={breed.image!.url}
+            src={breed.image?.url || ""}
             alt={breed.name}
             layout="fill"
             objectFit="cover"
