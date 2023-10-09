@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import {
   CheckIcon,
   InformationCircleIcon,
@@ -9,6 +7,7 @@ import SEO from "common/components/SEO";
 import useFetch from "common/hooks/useFetch";
 import DefaultLayout from "common/layouts/Default";
 import { selectBreeds } from "common/redux/breeds";
+import { BREED_IMAGE_URL } from "common/utils/api";
 import getBreedGroupEmoji from "common/utils/getBreedGroupEmoji";
 import FeatureCard from "modules/Breed/FeatureCard";
 import { NextPage } from "next";
@@ -25,8 +24,10 @@ const Breed: NextPage = () => {
 
   const breeds = useSelector(selectBreeds());
 
+  // @ts-ignore
   const breed = breeds.find((breed) => breed.id === parseInt(id));
 
+  // @ts-ignore
   const { data, isLoading } = useFetch(`/api/breed/${breed.name}`);
 
   const handleSeeMore = () => {
@@ -42,6 +43,8 @@ const Breed: NextPage = () => {
     });
   };
 
+  if (!breed) return <></>;
+
   return (
     <>
       <SEO
@@ -54,10 +57,8 @@ const Breed: NextPage = () => {
           {/* Div is for styling purpose */}
           <div>
             <Image
-              src={breed.image.url}
+              src={`${BREED_IMAGE_URL}/${breed.reference_image_id}.jpg`}
               alt={breed.name}
-              width={breed.image.width}
-              height={breed.image.height}
               layout="responsive"
               className="rounded-lg"
               priority
@@ -145,7 +146,7 @@ const Breed: NextPage = () => {
                         )}
                         <p className="mt-4 leading-none">
                           <strong className="text-sm">
-                            <span class="mr-1 inline-block rounded-full bg-gray-200 px-2.5 py-0.5 text-xs uppercase text-gray-600">
+                            <span className="mr-1 inline-block rounded-full bg-gray-200 px-2.5 py-0.5 text-xs uppercase text-gray-600">
                               Note
                             </span>
                             This data is fetched from wikipedia. It may contain
