@@ -56,12 +56,11 @@ const Breed: NextPage = () => {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* Div is for styling purpose */}
           <div>
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={`${BREED_IMAGE_URL}/${breed.reference_image_id}.jpg`}
               alt={breed.name}
-              layout="responsive"
               className="rounded-lg"
-              priority
             />
           </div>
           <section className="flex flex-col gap-4">
