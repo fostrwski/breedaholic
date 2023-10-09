@@ -1,8 +1,9 @@
 import type { Breed } from "common/types";
+import { BREED_IMAGE_URL } from "common/utils/api";
 import getBreedGroupEmoji from "common/utils/getBreedGroupEmoji";
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 
 interface CardProps {
   breed: Breed;
@@ -26,7 +27,7 @@ const BreedCard: React.FC<CardProps> = ({ breed, customClasses, ...props }) => {
           }`}
         >
           <Image
-            src={breed.image?.url || ""}
+            src={`${BREED_IMAGE_URL}/${breed.reference_image_id}.jpg`}
             alt={breed.name}
             layout="fill"
             objectFit="cover"

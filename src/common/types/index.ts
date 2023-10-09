@@ -12,12 +12,7 @@ interface Breed {
     imperial: string;
     metric: string;
   };
-  image?: {
-    id: string;
-    url: string;
-    height: number;
-    width: number;
-  };
+  reference_image_id: string;
   bred_for: string;
   breed_group: string;
 }
