@@ -1,6 +1,6 @@
 # `Breedaholic 🐶`
 
-This web application helps you find the dog breed you're looking for! 
+This web application helps you find the dog breed you're looking for!
 
 🔴 Live application: https://breedaholic.netlify.app
 
