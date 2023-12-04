@@ -34,7 +34,7 @@
     "eslint-plugin-jest": "^27.2.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "identity-obj-proxy": "^3.0.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.32",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.3",
     "typescript": "^5.0.2"
